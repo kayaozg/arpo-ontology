@@ -1,0 +1,2321 @@
+<h2 id="crossreference" class="list">Cross-reference for Academic Research Publication Ontology (ARPO) classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Academic Research Publication Ontology (ARPO).
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#AffiliationRecord" title="https://example.org/arpo#AffiliationRecord">Affiliation Record</a></li>
+  <li><a href="#Author" title="https://example.org/arpo#Author">Author</a></li>
+  <li><a href="#BookChapter" title="https://example.org/arpo#BookChapter">Book Chapter</a></li>
+  <li><a href="#Citation" title="https://example.org/arpo#Citation">Citation</a></li>
+  <li><a href="#Company" title="https://example.org/arpo#Company">Company</a></li>
+  <li><a href="#Conference" title="https://example.org/arpo#Conference">Conference</a></li>
+  <li><a href="#ConferencePaper" title="https://example.org/arpo#ConferencePaper">Conference Paper</a></li>
+  <li><a href="#FundingBody" title="https://example.org/arpo#FundingBody">Funding Body</a></li>
+  <li><a href="#Grant" title="https://example.org/arpo#Grant">Grant</a></li>
+  <li><a href="#Institution" title="https://example.org/arpo#Institution">Institution</a></li>
+  <li><a href="#Journal" title="https://example.org/arpo#Journal">Journal</a></li>
+  <li><a href="#JournalArticle" title="https://example.org/arpo#JournalArticle">Journal Article</a></li>
+  <li><a href="#Keyword" title="https://example.org/arpo#Keyword">Keyword</a></li>
+  <li><a href="#OpenAccessStatus" title="https://example.org/arpo#OpenAccessStatus">Open Access Status</a></li>
+  <li><a href="#PeerReviewRecord" title="https://example.org/arpo#PeerReviewRecord">Peer Review Record</a></li>
+  <li><a href="#Person" title="https://example.org/arpo#Person">Person</a></li>
+  <li><a href="#Preprint" title="https://example.org/arpo#Preprint">Preprint</a></li>
+  <li><a href="#Publication" title="https://example.org/arpo#Publication">Publication</a></li>
+  <li><a href="#PublicationVenue" title="https://example.org/arpo#PublicationVenue">Publication Venue</a></li>
+  <li><a href="#Publisher" title="https://example.org/arpo#Publisher">Publisher</a></li>
+  <li><a href="#ResearchGroup" title="https://example.org/arpo#ResearchGroup">Research Group</a></li>
+  <li><a href="#ResearchInstitute" title="https://example.org/arpo#ResearchInstitute">Research Institute</a></li>
+  <li><a href="#ResearchTopic" title="https://example.org/arpo#ResearchTopic">Research Topic</a></li>
+  <li><a href="#Researcher" title="https://example.org/arpo#Researcher">Researcher</a></li>
+  <li><a href="#Reviewer" title="https://example.org/arpo#Reviewer">Reviewer</a></li>
+  <li><a href="#TechnicalReport" title="https://example.org/arpo#TechnicalReport">Technical Report</a></li>
+  <li><a href="#Thesis" title="https://example.org/arpo#Thesis">Thesis</a></li>
+  <li><a href="#University" title="https://example.org/arpo#University">University</a></li>
+  <li><a href="#Workshop" title="https://example.org/arpo#Workshop">Workshop</a></li>
+ </ul>
+ <div class="entity" id="AffiliationRecord">
+  <h3>Affiliation Record<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#AffiliationRecord</p>
+  <div class="comment">
+   <span class="markdown">A time-bounded record linking an Author to an Institution for a given period. Follows the MOMo record pattern, which reifies relationships that change over time.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#affiliatedInstitution" title="https://example.org/arpo#affiliatedInstitution">affiliated institution</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasEndYear" title="https://example.org/arpo#hasEndYear">has end year</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasStartYear" title="https://example.org/arpo#hasStartYear">has start year</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasAffiliationRecord" title="https://example.org/arpo#hasAffiliationRecord">has affiliation record</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#affRec_alice_A" title="https://example.org/arpo#affRec_alice_A">aff Rec alice A</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Author">
+  <h3>Author<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Author</p>
+  <div class="comment">
+   <span class="markdown">A researcher who has authored one or more publications.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Researcher" title="https://example.org/arpo#Researcher">Researcher</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasAffiliationRecord" title="https://example.org/arpo#hasAffiliationRecord">has affiliation record</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCoAuthor" title="https://example.org/arpo#hasCoAuthor">has co-author</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAuthorOf" title="https://example.org/arpo#isAuthorOf">is author of</a> <sup class="type-op" title="object property">op</sup>, <a href="#memberOf" title="https://example.org/arpo#memberOf">member of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasAuthor" title="https://example.org/arpo#hasAuthor">has author</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCoAuthor" title="https://example.org/arpo#hasCoAuthor">has co-author</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#author_alice" title="https://example.org/arpo#author_alice">author alice</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#author_bob" title="https://example.org/arpo#author_bob">author bob</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BookChapter">
+  <h3>Book Chapter<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#BookChapter</p>
+  <div class="comment">
+   <span class="markdown">A chapter or section published within an edited academic book.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ConferencePaper" title="https://example.org/arpo#ConferencePaper">Conference Paper</a> <sup class="type-c" title="class">c</sup>, <a href="#JournalArticle" title="https://example.org/arpo#JournalArticle">Journal Article</a> <sup class="type-c" title="class">c</sup>, <a href="#Preprint" title="https://example.org/arpo#Preprint">Preprint</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalReport" title="https://example.org/arpo#TechnicalReport">Technical Report</a> <sup class="type-c" title="class">c</sup>, <a href="#Thesis" title="https://example.org/arpo#Thesis">Thesis</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Citation">
+  <h3>Citation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Citation</p>
+  <div class="comment">
+   <span class="markdown">A formal reference from one publication to another.</span>
+  </div>
+ </div>
+ <div class="entity" id="Company">
+  <h3>Company<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Company</p>
+  <div class="comment">
+   <span class="markdown">An industrial or commercial organisation engaged in research.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Institution" title="https://example.org/arpo#Institution">Institution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ResearchGroup" title="https://example.org/arpo#ResearchGroup">Research Group</a> <sup class="type-c" title="class">c</sup>, <a href="#ResearchInstitute" title="https://example.org/arpo#ResearchInstitute">Research Institute</a> <sup class="type-c" title="class">c</sup>, <a href="#University" title="https://example.org/arpo#University">University</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Conference">
+  <h3>Conference<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Conference</p>
+  <div class="comment">
+   <span class="markdown">An academic event at which research papers are presented and published in proceedings.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PublicationVenue" title="https://example.org/arpo#PublicationVenue">Publication Venue</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Workshop" title="https://example.org/arpo#Workshop">Workshop</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#ISWC2025" title="https://example.org/arpo#ISWC2025">24th International Semantic Web Conference (ISWC 2025)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Journal" title="https://example.org/arpo#Journal">Journal</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ConferencePaper">
+  <h3>Conference Paper<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#ConferencePaper</p>
+  <div class="comment">
+   <span class="markdown">A paper accepted and presented at an academic conference or workshop.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#paper_002" title="https://example.org/arpo#paper_002">paper 002</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BookChapter" title="https://example.org/arpo#BookChapter">Book Chapter</a> <sup class="type-c" title="class">c</sup>, <a href="#JournalArticle" title="https://example.org/arpo#JournalArticle">Journal Article</a> <sup class="type-c" title="class">c</sup>, <a href="#Preprint" title="https://example.org/arpo#Preprint">Preprint</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalReport" title="https://example.org/arpo#TechnicalReport">Technical Report</a> <sup class="type-c" title="class">c</sup>, <a href="#Thesis" title="https://example.org/arpo#Thesis">Thesis</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FundingBody">
+  <h3>Funding Body<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#FundingBody</p>
+  <div class="comment">
+   <span class="markdown">An organisation that provides research funding, such as a national science foundation, charity, or government agency.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#fundedBy" title="https://example.org/arpo#fundedBy">funded by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#FunderNSF" title="https://example.org/arpo#FunderNSF">National Science Foundation (NSF)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Grant">
+  <h3>Grant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Grant</p>
+  <div class="comment">
+   <span class="markdown">A funded research grant associated with one or more publications.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#fundedBy" title="https://example.org/arpo#fundedBy">funded by</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasGrantNumber" title="https://example.org/arpo#hasGrantNumber">has grant number</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasFunding" title="https://example.org/arpo#hasFunding">has funding</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#grant_arpo_2025" title="https://example.org/arpo#grant_arpo_2025">grant arpo 2025</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Institution">
+  <h3>Institution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Institution</p>
+  <div class="comment">
+   <span class="markdown">An organisation with which researchers may be affiliated.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Company" title="https://example.org/arpo#Company">Company</a> <sup class="type-c" title="class">c</sup>, <a href="#ResearchGroup" title="https://example.org/arpo#ResearchGroup">Research Group</a> <sup class="type-c" title="class">c</sup>, <a href="#ResearchInstitute" title="https://example.org/arpo#ResearchInstitute">Research Institute</a> <sup class="type-c" title="class">c</sup>, <a href="#University" title="https://example.org/arpo#University">University</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasAffiliation" title="https://example.org/arpo#hasAffiliation">has affiliation</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#affiliatedInstitution" title="https://example.org/arpo#affiliatedInstitution">affiliated institution</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAffiliatedWith" title="https://example.org/arpo#isAffiliatedWith">is affiliated with</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Journal">
+  <h3>Journal<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Journal</p>
+  <div class="comment">
+   <span class="markdown">A periodical publication containing peer-reviewed academic articles.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PublicationVenue" title="https://example.org/arpo#PublicationVenue">Publication Venue</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasISSN" title="https://example.org/arpo#hasISSN">has ISSN</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasImpactFactor" title="https://example.org/arpo#hasImpactFactor">has impact factor</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#JWebSemantics" title="https://example.org/arpo#JWebSemantics">Journal of Web Semantics</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Conference" title="https://example.org/arpo#Conference">Conference</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="JournalArticle">
+  <h3>Journal Article<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#JournalArticle</p>
+  <div class="comment">
+   <span class="markdown">A peer-reviewed article published in a scholarly journal.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasIssue" title="https://example.org/arpo#hasIssue">has issue</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasVolume" title="https://example.org/arpo#hasVolume">has volume</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#paper_001" title="https://example.org/arpo#paper_001">paper 001</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BookChapter" title="https://example.org/arpo#BookChapter">Book Chapter</a> <sup class="type-c" title="class">c</sup>, <a href="#ConferencePaper" title="https://example.org/arpo#ConferencePaper">Conference Paper</a> <sup class="type-c" title="class">c</sup>, <a href="#Preprint" title="https://example.org/arpo#Preprint">Preprint</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalReport" title="https://example.org/arpo#TechnicalReport">Technical Report</a> <sup class="type-c" title="class">c</sup>, <a href="#Thesis" title="https://example.org/arpo#Thesis">Thesis</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Keyword">
+  <h3>Keyword<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Keyword</p>
+  <div class="comment">
+   <span class="markdown">A term or phrase assigned to a publication to describe its content.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasLabel" title="https://example.org/arpo#hasLabel">has label</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#representsArea" title="https://example.org/arpo#representsArea">represents area</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasKeyword" title="https://example.org/arpo#hasKeyword">has keyword</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#kw_linkeddata" title="https://example.org/arpo#kw_linkeddata">kw linkeddata</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#kw_llm" title="https://example.org/arpo#kw_llm">kw llm</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#kw_ontology" title="https://example.org/arpo#kw_ontology">kw ontology</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#kw_owl" title="https://example.org/arpo#kw_owl">kw owl</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="OpenAccessStatus">
+  <h3>Open Access Status<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#OpenAccessStatus</p>
+  <div class="comment">
+   <span class="markdown">The open access category of a publication. Controlled vocabulary: gold, green, bronze, closed. Follows the MOMo controlled-vocabulary (purple-box) pattern.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasAccessType" title="https://example.org/arpo#hasAccessType">has access type</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasOpenAccessStatus" title="https://example.org/arpo#hasOpenAccessStatus">has open access status</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#BronzeOA" title="https://example.org/arpo#BronzeOA">Bronze Open Access</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ClosedAccess" title="https://example.org/arpo#ClosedAccess">Closed Access</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#GoldOA" title="https://example.org/arpo#GoldOA">Gold Open Access</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#GreenOA" title="https://example.org/arpo#GreenOA">Green Open Access</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PeerReviewRecord">
+  <h3>Peer Review Record<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#PeerReviewRecord</p>
+  <div class="comment">
+   <span class="markdown">A record capturing the peer-review status of a publication, including whether it was reviewed and at which venue. Follows the MOMo provenance pattern.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasPeerReviewRecord" title="https://example.org/arpo#hasPeerReviewRecord">has peer review record</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Person">
+  <h3>Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Person</p>
+  <div class="comment">
+   <span class="markdown">A human being involved in academic research activities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Researcher" title="https://example.org/arpo#Researcher">Researcher</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasName" title="https://example.org/arpo#hasName">has name</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Preprint">
+  <h3>Preprint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Preprint</p>
+  <div class="comment">
+   <span class="markdown">A version of a research paper made publicly available before formal peer review, typically deposited on a preprint server such as arXiv or bioRxiv.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#preprint_001" title="https://example.org/arpo#preprint_001">preprint 001</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BookChapter" title="https://example.org/arpo#BookChapter">Book Chapter</a> <sup class="type-c" title="class">c</sup>, <a href="#ConferencePaper" title="https://example.org/arpo#ConferencePaper">Conference Paper</a> <sup class="type-c" title="class">c</sup>, <a href="#JournalArticle" title="https://example.org/arpo#JournalArticle">Journal Article</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalReport" title="https://example.org/arpo#TechnicalReport">Technical Report</a> <sup class="type-c" title="class">c</sup>, <a href="#Thesis" title="https://example.org/arpo#Thesis">Thesis</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Publication">
+  <h3>Publication<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Publication</p>
+  <div class="comment">
+   <span class="markdown">The top-level class for all types of academic research outputs.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#BookChapter" title="https://example.org/arpo#BookChapter">Book Chapter</a> <sup class="type-c" title="class">c</sup>, <a href="#ConferencePaper" title="https://example.org/arpo#ConferencePaper">Conference Paper</a> <sup class="type-c" title="class">c</sup>, <a href="#JournalArticle" title="https://example.org/arpo#JournalArticle">Journal Article</a> <sup class="type-c" title="class">c</sup>, <a href="#Preprint" title="https://example.org/arpo#Preprint">Preprint</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalReport" title="https://example.org/arpo#TechnicalReport">Technical Report</a> <sup class="type-c" title="class">c</sup>, <a href="#Thesis" title="https://example.org/arpo#Thesis">Thesis</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#cites" title="https://example.org/arpo#cites">cites</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDOI" title="https://example.org/arpo#hasDOI">has DOI</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAbstract" title="https://example.org/arpo#hasAbstract">has abstract</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAuthor" title="https://example.org/arpo#hasAuthor">has author</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasCitationCount" title="https://example.org/arpo#hasCitationCount">has citation count</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFunding" title="https://example.org/arpo#hasFunding">has funding</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasKeyword" title="https://example.org/arpo#hasKeyword">has keyword</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasOpenAccessStatus" title="https://example.org/arpo#hasOpenAccessStatus">has open access status</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPageEnd" title="https://example.org/arpo#hasPageEnd">has page end</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPageStart" title="https://example.org/arpo#hasPageStart">has page start</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPeerReviewRecord" title="https://example.org/arpo#hasPeerReviewRecord">has peer review record</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasResearchTopic" title="https://example.org/arpo#hasResearchTopic">has research topic</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTitle" title="https://example.org/arpo#hasTitle">has title</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasYear" title="https://example.org/arpo#hasYear">has year</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isCitedBy" title="https://example.org/arpo#isCitedBy">is cited by</a> <sup class="type-op" title="object property">op</sup>, <a href="#publishedBy" title="https://example.org/arpo#publishedBy">published by</a> <sup class="type-op" title="object property">op</sup>, <a href="#publishedIn" title="https://example.org/arpo#publishedIn">published in</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#cites" title="https://example.org/arpo#cites">cites</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAuthorOf" title="https://example.org/arpo#isAuthorOf">is author of</a> <sup class="type-op" title="object property">op</sup>, <a href="#isCitedBy" title="https://example.org/arpo#isCitedBy">is cited by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PublicationVenue">
+  <h3>Publication Venue<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#PublicationVenue</p>
+  <div class="comment">
+   <span class="markdown">A channel or forum where academic research is formally published or presented.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Conference" title="https://example.org/arpo#Conference">Conference</a> <sup class="type-c" title="class">c</sup>, <a href="#Journal" title="https://example.org/arpo#Journal">Journal</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#publishedIn" title="https://example.org/arpo#publishedIn">published in</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Publisher">
+  <h3>Publisher<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Publisher</p>
+  <div class="comment">
+   <span class="markdown">An organisation responsible for producing and distributing publications.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#publishedBy" title="https://example.org/arpo#publishedBy">published by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ResearchGroup">
+  <h3>Research Group<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#ResearchGroup</p>
+  <div class="comment">
+   <span class="markdown">A named research group or laboratory operating within a university or research institute.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Institution" title="https://example.org/arpo#Institution">Institution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#memberOf" title="https://example.org/arpo#memberOf">member of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#KnowledgeLabA" title="https://example.org/arpo#KnowledgeLabA">Knowledge Engineering Lab, Example University A</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Company" title="https://example.org/arpo#Company">Company</a> <sup class="type-c" title="class">c</sup>, <a href="#ResearchInstitute" title="https://example.org/arpo#ResearchInstitute">Research Institute</a> <sup class="type-c" title="class">c</sup>, <a href="#University" title="https://example.org/arpo#University">University</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ResearchInstitute">
+  <h3>Research Institute<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#ResearchInstitute</p>
+  <div class="comment">
+   <span class="markdown">A dedicated research organisation, not necessarily degree-granting.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Institution" title="https://example.org/arpo#Institution">Institution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Company" title="https://example.org/arpo#Company">Company</a> <sup class="type-c" title="class">c</sup>, <a href="#ResearchGroup" title="https://example.org/arpo#ResearchGroup">Research Group</a> <sup class="type-c" title="class">c</sup>, <a href="#University" title="https://example.org/arpo#University">University</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ResearchTopic">
+  <h3>Research Topic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#ResearchTopic</p>
+  <div class="comment">
+   <span class="markdown">A subject area or thematic domain of academic research.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasTopicName" title="https://example.org/arpo#hasTopicName">has topic name</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasResearchTopic" title="https://example.org/arpo#hasResearchTopic">has research topic</a> <sup class="type-op" title="object property">op</sup>, <a href="#representsArea" title="https://example.org/arpo#representsArea">represents area</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#KnowledgeEngineering" title="https://example.org/arpo#KnowledgeEngineering">Knowledge Engineering</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#MachineLearning" title="https://example.org/arpo#MachineLearning">Machine Learning</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#SemanticWeb" title="https://example.org/arpo#SemanticWeb">Semantic Web</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Researcher">
+  <h3>Researcher<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Researcher</p>
+  <div class="comment">
+   <span class="markdown">A person who conducts academic research.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://example.org/arpo#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Author" title="https://example.org/arpo#Author">Author</a> <sup class="type-c" title="class">c</sup>, <a href="#Reviewer" title="https://example.org/arpo#Reviewer">Reviewer</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasORCID" title="https://example.org/arpo#hasORCID">has ORCID</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isAffiliatedWith" title="https://example.org/arpo#isAffiliatedWith">is affiliated with</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasAffiliation" title="https://example.org/arpo#hasAffiliation">has affiliation</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Reviewer">
+  <h3>Reviewer<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Reviewer</p>
+  <div class="comment">
+   <span class="markdown">A researcher who peer-reviews academic manuscripts.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Researcher" title="https://example.org/arpo#Researcher">Researcher</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TechnicalReport">
+  <h3>Technical Report<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#TechnicalReport</p>
+  <div class="comment">
+   <span class="markdown">A formal report describing the results or progress of technical research.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BookChapter" title="https://example.org/arpo#BookChapter">Book Chapter</a> <sup class="type-c" title="class">c</sup>, <a href="#ConferencePaper" title="https://example.org/arpo#ConferencePaper">Conference Paper</a> <sup class="type-c" title="class">c</sup>, <a href="#JournalArticle" title="https://example.org/arpo#JournalArticle">Journal Article</a> <sup class="type-c" title="class">c</sup>, <a href="#Preprint" title="https://example.org/arpo#Preprint">Preprint</a> <sup class="type-c" title="class">c</sup>, <a href="#Thesis" title="https://example.org/arpo#Thesis">Thesis</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Thesis">
+  <h3>Thesis<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Thesis</p>
+  <div class="comment">
+   <span class="markdown">A doctoral dissertation or master's thesis submitted to an academic institution.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#BookChapter" title="https://example.org/arpo#BookChapter">Book Chapter</a> <sup class="type-c" title="class">c</sup>, <a href="#ConferencePaper" title="https://example.org/arpo#ConferencePaper">Conference Paper</a> <sup class="type-c" title="class">c</sup>, <a href="#JournalArticle" title="https://example.org/arpo#JournalArticle">Journal Article</a> <sup class="type-c" title="class">c</sup>, <a href="#Preprint" title="https://example.org/arpo#Preprint">Preprint</a> <sup class="type-c" title="class">c</sup>, <a href="#TechnicalReport" title="https://example.org/arpo#TechnicalReport">Technical Report</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="University">
+  <h3>University<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#University</p>
+  <div class="comment">
+   <span class="markdown">A higher-education institution that conducts research.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Institution" title="https://example.org/arpo#Institution">Institution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#UniExampleA" title="https://example.org/arpo#UniExampleA">Example University A</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#UniExampleB" title="https://example.org/arpo#UniExampleB">Example University B</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Company" title="https://example.org/arpo#Company">Company</a> <sup class="type-c" title="class">c</sup>, <a href="#ResearchGroup" title="https://example.org/arpo#ResearchGroup">Research Group</a> <sup class="type-c" title="class">c</sup>, <a href="#ResearchInstitute" title="https://example.org/arpo#ResearchInstitute">Research Institute</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Workshop">
+  <h3>Workshop<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#Workshop</p>
+  <div class="comment">
+   <span class="markdown">A smaller, more focused academic event often co-located with a major conference.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Conference" title="https://example.org/arpo#Conference">Conference</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#affiliatedInstitution" title="https://example.org/arpo#affiliatedInstitution">affiliated institution</a></li>
+  <li><a href="#cites" title="https://example.org/arpo#cites">cites</a></li>
+  <li><a href="#fundedBy" title="https://example.org/arpo#fundedBy">funded by</a></li>
+  <li><a href="#hasAffiliation" title="https://example.org/arpo#hasAffiliation">has affiliation</a></li>
+  <li><a href="#hasAffiliationRecord" title="https://example.org/arpo#hasAffiliationRecord">has affiliation record</a></li>
+  <li><a href="#hasAuthor" title="https://example.org/arpo#hasAuthor">has author</a></li>
+  <li><a href="#hasCoAuthor" title="https://example.org/arpo#hasCoAuthor">has co-author</a></li>
+  <li><a href="#hasFunding" title="https://example.org/arpo#hasFunding">has funding</a></li>
+  <li><a href="#hasKeyword" title="https://example.org/arpo#hasKeyword">has keyword</a></li>
+  <li><a href="#hasOpenAccessStatus" title="https://example.org/arpo#hasOpenAccessStatus">has open access status</a></li>
+  <li><a href="#hasPeerReviewRecord" title="https://example.org/arpo#hasPeerReviewRecord">has peer review record</a></li>
+  <li><a href="#hasResearchTopic" title="https://example.org/arpo#hasResearchTopic">has research topic</a></li>
+  <li><a href="#isAffiliatedWith" title="https://example.org/arpo#isAffiliatedWith">is affiliated with</a></li>
+  <li><a href="#isAuthorOf" title="https://example.org/arpo#isAuthorOf">is author of</a></li>
+  <li><a href="#isCitedBy" title="https://example.org/arpo#isCitedBy">is cited by</a></li>
+  <li><a href="#memberOf" title="https://example.org/arpo#memberOf">member of</a></li>
+  <li><a href="#publishedBy" title="https://example.org/arpo#publishedBy">published by</a></li>
+  <li><a href="#publishedIn" title="https://example.org/arpo#publishedIn">published in</a></li>
+  <li><a href="#representsArea" title="https://example.org/arpo#representsArea">represents area</a></li>
+ </ul>
+ <div class="entity" id="affiliatedInstitution">
+  <h3>affiliated institution<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#affiliatedInstitution</p>
+  <div class="comment">
+   <span class="markdown">The institution named in an affiliation record.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AffiliationRecord" title="https://example.org/arpo#AffiliationRecord">Affiliation Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Institution" title="https://example.org/arpo#Institution">Institution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="cites">
+  <h3>cites<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#cites</p>
+  <div class="comment">
+   <span class="markdown">Relates a publication to another publication it cites.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> irreflexive</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isCitedBy" title="https://example.org/arpo#isCitedBy">is cited by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="fundedBy">
+  <h3>funded by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#fundedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a grant to the funding body that issued it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Grant" title="https://example.org/arpo#Grant">Grant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#FundingBody" title="https://example.org/arpo#FundingBody">Funding Body</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAffiliation">
+  <h3>has affiliation<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasAffiliation</p>
+  <div class="comment">
+   <span class="markdown">Relates an institution to a researcher affiliated with it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Institution" title="https://example.org/arpo#Institution">Institution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Researcher" title="https://example.org/arpo#Researcher">Researcher</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isAffiliatedWith" title="https://example.org/arpo#isAffiliatedWith">is affiliated with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAffiliationRecord">
+  <h3>has affiliation record<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasAffiliationRecord</p>
+  <div class="comment">
+   <span class="markdown">Relates an author to a time-bounded affiliation record. Implements the MOMo record pattern to allow tracking of affiliation changes over time.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Author" title="https://example.org/arpo#Author">Author</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#AffiliationRecord" title="https://example.org/arpo#AffiliationRecord">Affiliation Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAuthor">
+  <h3>has author<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasAuthor</p>
+  <div class="comment">
+   <span class="markdown">Relates a publication to one of its authors.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Author" title="https://example.org/arpo#Author">Author</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isAuthorOf" title="https://example.org/arpo#isAuthorOf">is author of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasCoAuthor">
+  <h3>has co-author<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasCoAuthor</p>
+  <div class="comment">
+   <span class="markdown">Relates two authors who have co-authored at least one publication together.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> symmetric</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Author" title="https://example.org/arpo#Author">Author</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Author" title="https://example.org/arpo#Author">Author</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasFunding">
+  <h3>has funding<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasFunding</p>
+  <div class="comment">
+   <span class="markdown">Relates a publication to a grant that funded the research.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Grant" title="https://example.org/arpo#Grant">Grant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasKeyword">
+  <h3>has keyword<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasKeyword</p>
+  <div class="comment">
+   <span class="markdown">Relates a publication to one of its descriptor keywords.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Keyword" title="https://example.org/arpo#Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasOpenAccessStatus">
+  <h3>has open access status<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasOpenAccessStatus</p>
+  <div class="comment">
+   <span class="markdown">Relates a publication to its open access category (gold, green, bronze, or closed).</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#OpenAccessStatus" title="https://example.org/arpo#OpenAccessStatus">Open Access Status</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPeerReviewRecord">
+  <h3>has peer review record<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasPeerReviewRecord</p>
+  <div class="comment">
+   <span class="markdown">Relates a publication to a record of its peer-review status.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#PeerReviewRecord" title="https://example.org/arpo#PeerReviewRecord">Peer Review Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasResearchTopic">
+  <h3>has research topic<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasResearchTopic</p>
+  <div class="comment">
+   <span class="markdown">Relates a publication to a research topic it covers.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ResearchTopic" title="https://example.org/arpo#ResearchTopic">Research Topic</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAffiliatedWith">
+  <h3>is affiliated with<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#isAffiliatedWith</p>
+  <div class="comment">
+   <span class="markdown">Direct affiliation link between a researcher and an institution (simplified role-chain shortcut, following Norouzi et al. 2025).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Researcher" title="https://example.org/arpo#Researcher">Researcher</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Institution" title="https://example.org/arpo#Institution">Institution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasAffiliation" title="https://example.org/arpo#hasAffiliation">has affiliation</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAuthorOf">
+  <h3>is author of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#isAuthorOf</p>
+  <div class="comment">
+   <span class="markdown">Relates an author to a publication they have authored.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Author" title="https://example.org/arpo#Author">Author</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasAuthor" title="https://example.org/arpo#hasAuthor">has author</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isCitedBy">
+  <h3>is cited by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#isCitedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a publication to publications that cite it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#cites" title="https://example.org/arpo#cites">cites</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="memberOf">
+  <h3>member of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#memberOf</p>
+  <div class="comment">
+   <span class="markdown">Relates an author to a research group they belong to.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Author" title="https://example.org/arpo#Author">Author</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ResearchGroup" title="https://example.org/arpo#ResearchGroup">Research Group</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="publishedBy">
+  <h3>published by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#publishedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a publication to the publisher responsible for it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Publisher" title="https://example.org/arpo#Publisher">Publisher</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="publishedIn">
+  <h3>published in<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#publishedIn</p>
+  <div class="comment">
+   <span class="markdown">Relates a publication to the venue in which it was published.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#PublicationVenue" title="https://example.org/arpo#PublicationVenue">Publication Venue</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="representsArea">
+  <h3>represents area<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#representsArea</p>
+  <div class="comment">
+   <span class="markdown">Relates a keyword to the broader research topic it represents.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Keyword" title="https://example.org/arpo#Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ResearchTopic" title="https://example.org/arpo#ResearchTopic">Research Topic</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#hasAbstract" title="https://example.org/arpo#hasAbstract">has abstract</a></li>
+  <li><a href="#hasAccessType" title="https://example.org/arpo#hasAccessType">has access type</a></li>
+  <li><a href="#hasCitationCount" title="https://example.org/arpo#hasCitationCount">has citation count</a></li>
+  <li><a href="#hasDOI" title="https://example.org/arpo#hasDOI">has DOI</a></li>
+  <li><a href="#hasEndYear" title="https://example.org/arpo#hasEndYear">has end year</a></li>
+  <li><a href="#hasGrantNumber" title="https://example.org/arpo#hasGrantNumber">has grant number</a></li>
+  <li><a href="#hasImpactFactor" title="https://example.org/arpo#hasImpactFactor">has impact factor</a></li>
+  <li><a href="#hasISSN" title="https://example.org/arpo#hasISSN">has ISSN</a></li>
+  <li><a href="#hasIssue" title="https://example.org/arpo#hasIssue">has issue</a></li>
+  <li><a href="#hasLabel" title="https://example.org/arpo#hasLabel">has label</a></li>
+  <li><a href="#hasName" title="https://example.org/arpo#hasName">has name</a></li>
+  <li><a href="#hasORCID" title="https://example.org/arpo#hasORCID">has ORCID</a></li>
+  <li><a href="#hasPageEnd" title="https://example.org/arpo#hasPageEnd">has page end</a></li>
+  <li><a href="#hasPageStart" title="https://example.org/arpo#hasPageStart">has page start</a></li>
+  <li><a href="#hasStartYear" title="https://example.org/arpo#hasStartYear">has start year</a></li>
+  <li><a href="#hasTitle" title="https://example.org/arpo#hasTitle">has title</a></li>
+  <li><a href="#hasTopicName" title="https://example.org/arpo#hasTopicName">has topic name</a></li>
+  <li><a href="#hasVolume" title="https://example.org/arpo#hasVolume">has volume</a></li>
+  <li><a href="#hasYear" title="https://example.org/arpo#hasYear">has year</a></li>
+ </ul>
+ <div class="entity" id="hasAbstract">
+  <h3>has abstract<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasAbstract</p>
+  <div class="comment">
+   <span class="markdown">The abstract or summary text of the publication.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAccessType">
+  <h3>has access type<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasAccessType</p>
+  <div class="comment">
+   <span class="markdown">The open access type label. Expected values: gold, green, bronze, closed.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#OpenAccessStatus" title="https://example.org/arpo#OpenAccessStatus">Open Access Status</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasCitationCount">
+  <h3>has citation count<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasCitationCount</p>
+  <div class="comment">
+   <span class="markdown">The total number of times the publication has been cited.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDOI">
+  <h3>has DOI<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasDOI</p>
+  <div class="comment">
+   <span class="markdown">The Digital Object Identifier (DOI) of the publication.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEndYear">
+  <h3>has end year<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasEndYear</p>
+  <div class="comment">
+   <span class="markdown">The year in which the affiliation described by this record ended. Omitted if the affiliation is current.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AffiliationRecord" title="https://example.org/arpo#AffiliationRecord">Affiliation Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasGrantNumber">
+  <h3>has grant number<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasGrantNumber</p>
+  <div class="comment">
+   <span class="markdown">The official award or grant number assigned by the funding body.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Grant" title="https://example.org/arpo#Grant">Grant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasImpactFactor">
+  <h3>has impact factor<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasImpactFactor</p>
+  <div class="comment">
+   <span class="markdown">The current Journal Impact Factor (JIF) of the journal.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Journal" title="https://example.org/arpo#Journal">Journal</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasISSN">
+  <h3>has ISSN<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasISSN</p>
+  <div class="comment">
+   <span class="markdown">The International Standard Serial Number of the journal.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Journal" title="https://example.org/arpo#Journal">Journal</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasIssue">
+  <h3>has issue<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasIssue</p>
+  <div class="comment">
+   <span class="markdown">The journal issue in which the article appears.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#JournalArticle" title="https://example.org/arpo#JournalArticle">Journal Article</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasLabel">
+  <h3>has label<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasLabel</p>
+  <div class="comment">
+   <span class="markdown">The textual label of the keyword.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Keyword" title="https://example.org/arpo#Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasName">
+  <h3>has name<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasName</p>
+  <div class="comment">
+   <span class="markdown">The full name of the person.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Person" title="https://example.org/arpo#Person">Person</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasORCID">
+  <h3>has ORCID<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasORCID</p>
+  <div class="comment">
+   <span class="markdown">The Open Researcher and Contributor ID (ORCID) of the researcher.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Researcher" title="https://example.org/arpo#Researcher">Researcher</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPageEnd">
+  <h3>has page end<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasPageEnd</p>
+  <div class="comment">
+   <span class="markdown">The last page number of the publication.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPageStart">
+  <h3>has page start<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasPageStart</p>
+  <div class="comment">
+   <span class="markdown">The first page number of the publication.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasStartYear">
+  <h3>has start year<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasStartYear</p>
+  <div class="comment">
+   <span class="markdown">The year in which the affiliation described by this record began.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AffiliationRecord" title="https://example.org/arpo#AffiliationRecord">Affiliation Record</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTitle">
+  <h3>has title<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasTitle</p>
+  <div class="comment">
+   <span class="markdown">The full title of the publication.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTopicName">
+  <h3>has topic name<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasTopicName</p>
+  <div class="comment">
+   <span class="markdown">The name of the research topic.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ResearchTopic" title="https://example.org/arpo#ResearchTopic">Research Topic</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasVolume">
+  <h3>has volume<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasVolume</p>
+  <div class="comment">
+   <span class="markdown">The journal volume in which the article appears.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#JournalArticle" title="https://example.org/arpo#JournalArticle">Journal Article</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasYear">
+  <h3>has year<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#hasYear</p>
+  <div class="comment">
+   <span class="markdown">The year in which the publication was published.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Publication" title="https://example.org/arpo#Publication">Publication</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#ISWC2025" title="https://example.org/arpo#ISWC2025">24th International Semantic Web Conference (ISWC 2025)</a></li>
+  <li><a href="#affRec_alice_A" title="https://example.org/arpo#affRec_alice_A"> <span>aff Rec alice A</span> </a></li>
+  <li><a href="#author_alice" title="https://example.org/arpo#author_alice"> <span>author alice</span> </a></li>
+  <li><a href="#author_bob" title="https://example.org/arpo#author_bob"> <span>author bob</span> </a></li>
+  <li><a href="#BronzeOA" title="https://example.org/arpo#BronzeOA">Bronze Open Access</a></li>
+  <li><a href="#ClosedAccess" title="https://example.org/arpo#ClosedAccess">Closed Access</a></li>
+  <li><a href="#UniExampleA" title="https://example.org/arpo#UniExampleA">Example University A</a></li>
+  <li><a href="#UniExampleB" title="https://example.org/arpo#UniExampleB">Example University B</a></li>
+  <li><a href="#GoldOA" title="https://example.org/arpo#GoldOA">Gold Open Access</a></li>
+  <li><a href="#grant_arpo_2025" title="https://example.org/arpo#grant_arpo_2025"> <span>grant arpo 2025</span> </a></li>
+  <li><a href="#GreenOA" title="https://example.org/arpo#GreenOA">Green Open Access</a></li>
+  <li><a href="#JWebSemantics" title="https://example.org/arpo#JWebSemantics">Journal of Web Semantics</a></li>
+  <li><a href="#KnowledgeEngineering" title="https://example.org/arpo#KnowledgeEngineering"> <span>Knowledge Engineering</span> </a></li>
+  <li><a href="#KnowledgeLabA" title="https://example.org/arpo#KnowledgeLabA">Knowledge Engineering Lab, Example University A</a></li>
+  <li><a href="#kw_linkeddata" title="https://example.org/arpo#kw_linkeddata"> <span>kw linkeddata</span> </a></li>
+  <li><a href="#kw_llm" title="https://example.org/arpo#kw_llm"> <span>kw llm</span> </a></li>
+  <li><a href="#kw_ontology" title="https://example.org/arpo#kw_ontology"> <span>kw ontology</span> </a></li>
+  <li><a href="#kw_owl" title="https://example.org/arpo#kw_owl"> <span>kw owl</span> </a></li>
+  <li><a href="#MachineLearning" title="https://example.org/arpo#MachineLearning"> <span>Machine Learning</span> </a></li>
+  <li><a href="#FunderNSF" title="https://example.org/arpo#FunderNSF">National Science Foundation (NSF)</a></li>
+  <li><a href="#paper_001" title="https://example.org/arpo#paper_001"> <span>paper 001</span> </a></li>
+  <li><a href="#paper_002" title="https://example.org/arpo#paper_002"> <span>paper 002</span> </a></li>
+  <li><a href="#preprint_001" title="https://example.org/arpo#preprint_001"> <span>preprint 001</span> </a></li>
+  <li><a href="#SemanticWeb" title="https://example.org/arpo#SemanticWeb"> <span>Semantic Web</span> </a></li>
+ </ul>
+ <div class="entity" id="ISWC2025">
+  <h3>24th International Semantic Web Conference (ISWC 2025)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#ISWC2025</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Conference" title="https://example.org/arpo#Conference">Conference</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="affRec_alice_A">
+  <h3>aff Rec alice A<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#affRec_alice_A</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#AffiliationRecord" title="https://example.org/arpo#AffiliationRecord">Affiliation Record</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#affiliatedInstitution" title="https://example.org/arpo#affiliatedInstitution">affiliated institution</a> <sup class="type-op" title="object property">op</sup> <a href="#UniExampleA" title="https://example.org/arpo#UniExampleA">Example University A</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasStartYear" title="https://example.org/arpo#hasStartYear">has start year</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2020"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="author_alice">
+  <h3>author alice<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#author_alice</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Author" title="https://example.org/arpo#Author">Author</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasAffiliationRecord" title="https://example.org/arpo#hasAffiliationRecord">has affiliation record</a> <sup class="type-op" title="object property">op</sup> <a href="#affRec_alice_A" title="https://example.org/arpo#affRec_alice_A">aff Rec alice A</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasCoAuthor" title="https://example.org/arpo#hasCoAuthor">has co-author</a> <sup class="type-op" title="object property">op</sup> <a href="#author_bob" title="https://example.org/arpo#author_bob">author bob</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#isAffiliatedWith" title="https://example.org/arpo#isAffiliatedWith">is affiliated with</a> <sup class="type-op" title="object property">op</sup> <a href="#UniExampleA" title="https://example.org/arpo#UniExampleA">Example University A</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#memberOf" title="https://example.org/arpo#memberOf">member of</a> <sup class="type-op" title="object property">op</sup> <a href="#KnowledgeLabA" title="https://example.org/arpo#KnowledgeLabA">Knowledge Engineering Lab, Example University A</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasName" title="https://example.org/arpo#hasName">has name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Alice Smith"</span>
+   </dd>
+   <dd>
+    <a href="#hasORCID" title="https://example.org/arpo#hasORCID">has ORCID</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"0000-0001-2345-6789"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="author_bob">
+  <h3>author bob<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#author_bob</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Author" title="https://example.org/arpo#Author">Author</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#isAffiliatedWith" title="https://example.org/arpo#isAffiliatedWith">is affiliated with</a> <sup class="type-op" title="object property">op</sup> <a href="#UniExampleB" title="https://example.org/arpo#UniExampleB">Example University B</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasName" title="https://example.org/arpo#hasName">has name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Bob Jones"</span>
+   </dd>
+   <dd>
+    <a href="#hasORCID" title="https://example.org/arpo#hasORCID">has ORCID</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"0000-0002-9876-5432"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BronzeOA">
+  <h3>Bronze Open Access<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#BronzeOA</p>
+  <div class="comment">
+   <span class="markdown">Free to read on the publisher site but without an open licence.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#OpenAccessStatus" title="https://example.org/arpo#OpenAccessStatus">Open Access Status</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasAccessType" title="https://example.org/arpo#hasAccessType">has access type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"bronze"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ClosedAccess">
+  <h3>Closed Access<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#ClosedAccess</p>
+  <div class="comment">
+   <span class="markdown">Access is restricted; requires subscription or payment.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#OpenAccessStatus" title="https://example.org/arpo#OpenAccessStatus">Open Access Status</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasAccessType" title="https://example.org/arpo#hasAccessType">has access type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"closed"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="UniExampleA">
+  <h3>Example University A<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#UniExampleA</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#University" title="https://example.org/arpo#University">University</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="UniExampleB">
+  <h3>Example University B<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#UniExampleB</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#University" title="https://example.org/arpo#University">University</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GoldOA">
+  <h3>Gold Open Access<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#GoldOA</p>
+  <div class="comment">
+   <span class="markdown">Immediately freely available via the publisher under an open licence.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#OpenAccessStatus" title="https://example.org/arpo#OpenAccessStatus">Open Access Status</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasAccessType" title="https://example.org/arpo#hasAccessType">has access type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"gold"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="grant_arpo_2025">
+  <h3>grant arpo 2025<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#grant_arpo_2025</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Grant" title="https://example.org/arpo#Grant">Grant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#fundedBy" title="https://example.org/arpo#fundedBy">funded by</a> <sup class="type-op" title="object property">op</sup> <a href="#FunderNSF" title="https://example.org/arpo#FunderNSF">National Science Foundation (NSF)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasGrantNumber" title="https://example.org/arpo#hasGrantNumber">has grant number</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"NSF-2025-KE-001"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GreenOA">
+  <h3>Green Open Access<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#GreenOA</p>
+  <div class="comment">
+   <span class="markdown">Self-archived in a repository (preprint or accepted manuscript).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#OpenAccessStatus" title="https://example.org/arpo#OpenAccessStatus">Open Access Status</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasAccessType" title="https://example.org/arpo#hasAccessType">has access type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"green"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="JWebSemantics">
+  <h3>Journal of Web Semantics<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#JWebSemantics</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Journal" title="https://example.org/arpo#Journal">Journal</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasISSN" title="https://example.org/arpo#hasISSN">has ISSN</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"1570-8268"</span>
+   </dd>
+   <dd>
+    <a href="#hasImpactFactor" title="https://example.org/arpo#hasImpactFactor">has impact factor</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"3.2"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="KnowledgeEngineering">
+  <h3>Knowledge Engineering<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#KnowledgeEngineering</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ResearchTopic" title="https://example.org/arpo#ResearchTopic">Research Topic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasTopicName" title="https://example.org/arpo#hasTopicName">has topic name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Knowledge Engineering"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="KnowledgeLabA">
+  <h3>Knowledge Engineering Lab, Example University A<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#KnowledgeLabA</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ResearchGroup" title="https://example.org/arpo#ResearchGroup">Research Group</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="kw_linkeddata">
+  <h3>kw linkeddata<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#kw_linkeddata</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Keyword" title="https://example.org/arpo#Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#representsArea" title="https://example.org/arpo#representsArea">represents area</a> <sup class="type-op" title="object property">op</sup> <a href="#SemanticWeb" title="https://example.org/arpo#SemanticWeb">Semantic Web</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasLabel" title="https://example.org/arpo#hasLabel">has label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Linked Data"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="kw_llm">
+  <h3>kw llm<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#kw_llm</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Keyword" title="https://example.org/arpo#Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#representsArea" title="https://example.org/arpo#representsArea">represents area</a> <sup class="type-op" title="object property">op</sup> <a href="#MachineLearning" title="https://example.org/arpo#MachineLearning">Machine Learning</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasLabel" title="https://example.org/arpo#hasLabel">has label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Large Language Model"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="kw_ontology">
+  <h3>kw ontology<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#kw_ontology</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Keyword" title="https://example.org/arpo#Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#representsArea" title="https://example.org/arpo#representsArea">represents area</a> <sup class="type-op" title="object property">op</sup> <a href="#KnowledgeEngineering" title="https://example.org/arpo#KnowledgeEngineering">Knowledge Engineering</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasLabel" title="https://example.org/arpo#hasLabel">has label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"ontology"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="kw_owl">
+  <h3>kw owl<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#kw_owl</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Keyword" title="https://example.org/arpo#Keyword">Keyword</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#representsArea" title="https://example.org/arpo#representsArea">represents area</a> <sup class="type-op" title="object property">op</sup> <a href="#SemanticWeb" title="https://example.org/arpo#SemanticWeb">Semantic Web</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasLabel" title="https://example.org/arpo#hasLabel">has label</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"OWL"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MachineLearning">
+  <h3>Machine Learning<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#MachineLearning</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ResearchTopic" title="https://example.org/arpo#ResearchTopic">Research Topic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasTopicName" title="https://example.org/arpo#hasTopicName">has topic name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Machine Learning"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FunderNSF">
+  <h3>National Science Foundation (NSF)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#FunderNSF</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#FundingBody" title="https://example.org/arpo#FundingBody">Funding Body</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="paper_001">
+  <h3>paper 001<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#paper_001</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#JournalArticle" title="https://example.org/arpo#JournalArticle">Journal Article</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#cites" title="https://example.org/arpo#cites">cites</a> <sup class="type-op" title="object property">op</sup> <a href="#paper_002" title="https://example.org/arpo#paper_002">paper 002</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasAuthor" title="https://example.org/arpo#hasAuthor">has author</a> <sup class="type-op" title="object property">op</sup> <a href="#author_alice" title="https://example.org/arpo#author_alice">author alice</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasAuthor" title="https://example.org/arpo#hasAuthor">has author</a> <sup class="type-op" title="object property">op</sup> <a href="#author_bob" title="https://example.org/arpo#author_bob">author bob</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasFunding" title="https://example.org/arpo#hasFunding">has funding</a> <sup class="type-op" title="object property">op</sup> <a href="#grant_arpo_2025" title="https://example.org/arpo#grant_arpo_2025">grant arpo 2025</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasKeyword" title="https://example.org/arpo#hasKeyword">has keyword</a> <sup class="type-op" title="object property">op</sup> <a href="#kw_linkeddata" title="https://example.org/arpo#kw_linkeddata">kw linkeddata</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasKeyword" title="https://example.org/arpo#hasKeyword">has keyword</a> <sup class="type-op" title="object property">op</sup> <a href="#kw_ontology" title="https://example.org/arpo#kw_ontology">kw ontology</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasKeyword" title="https://example.org/arpo#hasKeyword">has keyword</a> <sup class="type-op" title="object property">op</sup> <a href="#kw_owl" title="https://example.org/arpo#kw_owl">kw owl</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasOpenAccessStatus" title="https://example.org/arpo#hasOpenAccessStatus">has open access status</a> <sup class="type-op" title="object property">op</sup> <a href="#GoldOA" title="https://example.org/arpo#GoldOA">Gold Open Access</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasResearchTopic" title="https://example.org/arpo#hasResearchTopic">has research topic</a> <sup class="type-op" title="object property">op</sup> <a href="#KnowledgeEngineering" title="https://example.org/arpo#KnowledgeEngineering">Knowledge Engineering</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasResearchTopic" title="https://example.org/arpo#hasResearchTopic">has research topic</a> <sup class="type-op" title="object property">op</sup> <a href="#SemanticWeb" title="https://example.org/arpo#SemanticWeb">Semantic Web</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#publishedIn" title="https://example.org/arpo#publishedIn">published in</a> <sup class="type-op" title="object property">op</sup> <a href="#JWebSemantics" title="https://example.org/arpo#JWebSemantics">Journal of Web Semantics</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasAbstract" title="https://example.org/arpo#hasAbstract">has abstract</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"We present ARPO, a formal OWL 2 DL ontology for representing the academic research publication domain, supporting semantic search and citation analysis."</span>
+   </dd>
+   <dd>
+    <a href="#hasCitationCount" title="https://example.org/arpo#hasCitationCount">has citation count</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"0"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasDOI" title="https://example.org/arpo#hasDOI">has DOI</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"10.1000/arpo.2025.001"</span>
+   </dd>
+   <dd>
+    <a href="#hasIssue" title="https://example.org/arpo#hasIssue">has issue</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"3"</span>
+   </dd>
+   <dd>
+    <a href="#hasPageEnd" title="https://example.org/arpo#hasPageEnd">has page end</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"118"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasPageStart" title="https://example.org/arpo#hasPageStart">has page start</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"101"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasTitle" title="https://example.org/arpo#hasTitle">has title</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"An Ontology for Academic Research Publications"</span>
+   </dd>
+   <dd>
+    <a href="#hasVolume" title="https://example.org/arpo#hasVolume">has volume</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"12"</span>
+   </dd>
+   <dd>
+    <a href="#hasYear" title="https://example.org/arpo#hasYear">has year</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2025"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="paper_002">
+  <h3>paper 002<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#paper_002</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ConferencePaper" title="https://example.org/arpo#ConferencePaper">Conference Paper</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasAuthor" title="https://example.org/arpo#hasAuthor">has author</a> <sup class="type-op" title="object property">op</sup> <a href="#author_alice" title="https://example.org/arpo#author_alice">author alice</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasKeyword" title="https://example.org/arpo#hasKeyword">has keyword</a> <sup class="type-op" title="object property">op</sup> <a href="#kw_ontology" title="https://example.org/arpo#kw_ontology">kw ontology</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasOpenAccessStatus" title="https://example.org/arpo#hasOpenAccessStatus">has open access status</a> <sup class="type-op" title="object property">op</sup> <a href="#GreenOA" title="https://example.org/arpo#GreenOA">Green Open Access</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasResearchTopic" title="https://example.org/arpo#hasResearchTopic">has research topic</a> <sup class="type-op" title="object property">op</sup> <a href="#KnowledgeEngineering" title="https://example.org/arpo#KnowledgeEngineering">Knowledge Engineering</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#publishedIn" title="https://example.org/arpo#publishedIn">published in</a> <sup class="type-op" title="object property">op</sup> <a href="#ISWC2025" title="https://example.org/arpo#ISWC2025">24th International Semantic Web Conference (ISWC 2025)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasCitationCount" title="https://example.org/arpo#hasCitationCount">has citation count</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"0"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasDOI" title="https://example.org/arpo#hasDOI">has DOI</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"10.1000/arpo.2025.002"</span>
+   </dd>
+   <dd>
+    <a href="#hasPageEnd" title="https://example.org/arpo#hasPageEnd">has page end</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"57"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasPageStart" title="https://example.org/arpo#hasPageStart">has page start</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"44"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasTitle" title="https://example.org/arpo#hasTitle">has title</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Competency Questions in Ontology Engineering: A Systematic Review"</span>
+   </dd>
+   <dd>
+    <a href="#hasYear" title="https://example.org/arpo#hasYear">has year</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2025"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="preprint_001">
+  <h3>preprint 001<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#preprint_001</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Preprint" title="https://example.org/arpo#Preprint">Preprint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#cites" title="https://example.org/arpo#cites">cites</a> <sup class="type-op" title="object property">op</sup> <a href="#paper_001" title="https://example.org/arpo#paper_001">paper 001</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasAuthor" title="https://example.org/arpo#hasAuthor">has author</a> <sup class="type-op" title="object property">op</sup> <a href="#author_alice" title="https://example.org/arpo#author_alice">author alice</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasAuthor" title="https://example.org/arpo#hasAuthor">has author</a> <sup class="type-op" title="object property">op</sup> <a href="#author_bob" title="https://example.org/arpo#author_bob">author bob</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasKeyword" title="https://example.org/arpo#hasKeyword">has keyword</a> <sup class="type-op" title="object property">op</sup> <a href="#kw_llm" title="https://example.org/arpo#kw_llm">kw llm</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasKeyword" title="https://example.org/arpo#hasKeyword">has keyword</a> <sup class="type-op" title="object property">op</sup> <a href="#kw_ontology" title="https://example.org/arpo#kw_ontology">kw ontology</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasOpenAccessStatus" title="https://example.org/arpo#hasOpenAccessStatus">has open access status</a> <sup class="type-op" title="object property">op</sup> <a href="#GoldOA" title="https://example.org/arpo#GoldOA">Gold Open Access</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasResearchTopic" title="https://example.org/arpo#hasResearchTopic">has research topic</a> <sup class="type-op" title="object property">op</sup> <a href="#KnowledgeEngineering" title="https://example.org/arpo#KnowledgeEngineering">Knowledge Engineering</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasResearchTopic" title="https://example.org/arpo#hasResearchTopic">has research topic</a> <sup class="type-op" title="object property">op</sup> <a href="#MachineLearning" title="https://example.org/arpo#MachineLearning">Machine Learning</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasDOI" title="https://example.org/arpo#hasDOI">has DOI</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"10.48550/arXiv.2026.00001"</span>
+   </dd>
+   <dd>
+    <a href="#hasTitle" title="https://example.org/arpo#hasTitle">has title</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"LLM-Based Population of the ARPO Knowledge Graph: A Pilot Study"</span>
+   </dd>
+   <dd>
+    <a href="#hasYear" title="https://example.org/arpo#hasYear">has year</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2026"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SemanticWeb">
+  <h3>Semantic Web<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/arpo#SemanticWeb</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ResearchTopic" title="https://example.org/arpo#ResearchTopic">Research Topic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasTopicName" title="https://example.org/arpo#hasTopicName">has topic name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Semantic Web"</span>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>

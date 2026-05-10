@@ -1,0 +1,1256 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://example.org/arpo#"
+     xml:base="https://example.org/arpo"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:arpo="https://example.org/arpo#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://example.org/arpo">
+        <owl:versionIRI rdf:resource="https://example.org/arpo/2.0"/>
+        <terms:creator>Fırat Kaya Özgenç</terms:creator>
+        <terms:date>2026-05-05</terms:date>
+        <terms:description>A formal OWL 2 DL ontology for representing academic research publications, authors, venues, institutions, citation relationships, funding, and open access status.</terms:description>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:title>Academic Research Publication Ontology (ARPO)</terms:title>
+        <owl:priorVersion rdf:resource="https://example.org/arpo/1.0"/>
+        <skos:changeNote>v2.0: Added ResearchGroup, Grant, FundingBody, AffiliationRecord, OpenAccessStatus, PeerReviewRecord, Preprint classes. Added 6 new object properties and 4 new data properties. Modelling follows MOMo methodology with record and controlled-vocabulary patterns.</skos:changeNote>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#changeNote -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#changeNote"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://example.org/arpo#affiliatedInstitution -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#affiliatedInstitution">
+        <rdfs:domain rdf:resource="https://example.org/arpo#AffiliationRecord"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Institution"/>
+        <rdfs:comment>The institution named in an affiliation record.</rdfs:comment>
+        <rdfs:label>affiliated institution</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#cites -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#cites">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:comment>Relates a publication to another publication it cites.</rdfs:comment>
+        <rdfs:label>cites</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#fundedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#fundedBy">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Grant"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#FundingBody"/>
+        <rdfs:comment>Relates a grant to the funding body that issued it.</rdfs:comment>
+        <rdfs:label>funded by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasAffiliation -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#hasAffiliation">
+        <owl:inverseOf rdf:resource="https://example.org/arpo#isAffiliatedWith"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Institution"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Researcher"/>
+        <rdfs:comment>Relates an institution to a researcher affiliated with it.</rdfs:comment>
+        <rdfs:label>has affiliation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasAffiliationRecord -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#hasAffiliationRecord">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Author"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#AffiliationRecord"/>
+        <rdfs:comment>Relates an author to a time-bounded affiliation record. Implements the MOMo record pattern to allow tracking of affiliation changes over time.</rdfs:comment>
+        <rdfs:label>has affiliation record</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasAuthor -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#hasAuthor">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Author"/>
+        <rdfs:comment>Relates a publication to one of its authors.</rdfs:comment>
+        <rdfs:label>has author</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasCoAuthor -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#hasCoAuthor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Author"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Author"/>
+        <rdfs:comment>Relates two authors who have co-authored at least one publication together.</rdfs:comment>
+        <rdfs:label>has co-author</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasFunding -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#hasFunding">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Grant"/>
+        <rdfs:comment>Relates a publication to a grant that funded the research.</rdfs:comment>
+        <rdfs:label>has funding</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasKeyword -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#hasKeyword">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Keyword"/>
+        <rdfs:comment>Relates a publication to one of its descriptor keywords.</rdfs:comment>
+        <rdfs:label>has keyword</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasOpenAccessStatus -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#hasOpenAccessStatus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#OpenAccessStatus"/>
+        <rdfs:comment>Relates a publication to its open access category (gold, green, bronze, or closed).</rdfs:comment>
+        <rdfs:label>has open access status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasPeerReviewRecord -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#hasPeerReviewRecord">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#PeerReviewRecord"/>
+        <rdfs:comment>Relates a publication to a record of its peer-review status.</rdfs:comment>
+        <rdfs:label>has peer review record</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasResearchTopic -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#hasResearchTopic">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#ResearchTopic"/>
+        <rdfs:comment>Relates a publication to a research topic it covers.</rdfs:comment>
+        <rdfs:label>has research topic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#isAffiliatedWith -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#isAffiliatedWith">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Researcher"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Institution"/>
+        <rdfs:comment>Direct affiliation link between a researcher and an institution (simplified role-chain shortcut, following Norouzi et al. 2025).</rdfs:comment>
+        <rdfs:label>is affiliated with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#isAuthorOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#isAuthorOf">
+        <owl:inverseOf rdf:resource="https://example.org/arpo#hasAuthor"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Author"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:comment>Relates an author to a publication they have authored.</rdfs:comment>
+        <rdfs:label>is author of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#isCitedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#isCitedBy">
+        <owl:inverseOf rdf:resource="https://example.org/arpo#cites"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:comment>Relates a publication to publications that cite it.</rdfs:comment>
+        <rdfs:label>is cited by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#memberOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#memberOf">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Author"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#ResearchGroup"/>
+        <rdfs:comment>Relates an author to a research group they belong to.</rdfs:comment>
+        <rdfs:label>member of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#publishedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#publishedBy">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#Publisher"/>
+        <rdfs:comment>Relates a publication to the publisher responsible for it.</rdfs:comment>
+        <rdfs:label>published by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#publishedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#publishedIn">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#PublicationVenue"/>
+        <rdfs:comment>Relates a publication to the venue in which it was published.</rdfs:comment>
+        <rdfs:label>published in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://example.org/arpo#representsArea -->
+
+
+    <owl:ObjectProperty rdf:about="https://example.org/arpo#representsArea">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Keyword"/>
+        <rdfs:range rdf:resource="https://example.org/arpo#ResearchTopic"/>
+        <rdfs:comment>Relates a keyword to the broader research topic it represents.</rdfs:comment>
+        <rdfs:label>represents area</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://example.org/arpo#hasAbstract -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasAbstract">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The abstract or summary text of the publication.</rdfs:comment>
+        <rdfs:label>has abstract</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasAccessType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasAccessType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#OpenAccessStatus"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The open access type label. Expected values: gold, green, bronze, closed.</rdfs:comment>
+        <rdfs:label>has access type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasCitationCount -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasCitationCount">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The total number of times the publication has been cited.</rdfs:comment>
+        <rdfs:label>has citation count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasDOI -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasDOI">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The Digital Object Identifier (DOI) of the publication.</rdfs:comment>
+        <rdfs:label>has DOI</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasEndYear -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasEndYear">
+        <rdfs:domain rdf:resource="https://example.org/arpo#AffiliationRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The year in which the affiliation described by this record ended. Omitted if the affiliation is current.</rdfs:comment>
+        <rdfs:label>has end year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasGrantNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasGrantNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Grant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The official award or grant number assigned by the funding body.</rdfs:comment>
+        <rdfs:label>has grant number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasISSN -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasISSN">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Journal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The International Standard Serial Number of the journal.</rdfs:comment>
+        <rdfs:label>has ISSN</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasImpactFactor -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasImpactFactor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Journal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The current Journal Impact Factor (JIF) of the journal.</rdfs:comment>
+        <rdfs:label>has impact factor</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasIssue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasIssue">
+        <rdfs:domain rdf:resource="https://example.org/arpo#JournalArticle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The journal issue in which the article appears.</rdfs:comment>
+        <rdfs:label>has issue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasLabel -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasLabel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Keyword"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The textual label of the keyword.</rdfs:comment>
+        <rdfs:label>has label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The full name of the person.</rdfs:comment>
+        <rdfs:label>has name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasORCID -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasORCID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Researcher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The Open Researcher and Contributor ID (ORCID) of the researcher.</rdfs:comment>
+        <rdfs:label>has ORCID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasPageEnd -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasPageEnd">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The last page number of the publication.</rdfs:comment>
+        <rdfs:label>has page end</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasPageStart -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasPageStart">
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The first page number of the publication.</rdfs:comment>
+        <rdfs:label>has page start</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasStartYear -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasStartYear">
+        <rdfs:domain rdf:resource="https://example.org/arpo#AffiliationRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The year in which the affiliation described by this record began.</rdfs:comment>
+        <rdfs:label>has start year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasTitle -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasTitle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The full title of the publication.</rdfs:comment>
+        <rdfs:label>has title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasTopicName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasTopicName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#ResearchTopic"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of the research topic.</rdfs:comment>
+        <rdfs:label>has topic name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasVolume -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasVolume">
+        <rdfs:domain rdf:resource="https://example.org/arpo#JournalArticle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The journal volume in which the article appears.</rdfs:comment>
+        <rdfs:label>has volume</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://example.org/arpo#hasYear -->
+
+
+    <owl:DatatypeProperty rdf:about="https://example.org/arpo#hasYear">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The year in which the publication was published.</rdfs:comment>
+        <rdfs:label>has year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://example.org/arpo#AffiliationRecord -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#AffiliationRecord">
+        <rdfs:comment>A time-bounded record linking an Author to an Institution for a given period. Follows the MOMo record pattern, which reifies relationships that change over time.</rdfs:comment>
+        <rdfs:label>Affiliation Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Author -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Author">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Researcher"/>
+        <rdfs:comment>A researcher who has authored one or more publications.</rdfs:comment>
+        <rdfs:label>Author</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#BookChapter -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#BookChapter">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:comment>A chapter or section published within an edited academic book.</rdfs:comment>
+        <rdfs:label>Book Chapter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Citation -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Citation">
+        <rdfs:comment>A formal reference from one publication to another.</rdfs:comment>
+        <rdfs:label>Citation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Company -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Company">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Institution"/>
+        <rdfs:comment>An industrial or commercial organisation engaged in research.</rdfs:comment>
+        <rdfs:label>Company</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Conference -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Conference">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#PublicationVenue"/>
+        <owl:disjointWith rdf:resource="https://example.org/arpo#Journal"/>
+        <rdfs:comment>An academic event at which research papers are presented and published in proceedings.</rdfs:comment>
+        <rdfs:label>Conference</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#ConferencePaper -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#ConferencePaper">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:comment>A paper accepted and presented at an academic conference or workshop.</rdfs:comment>
+        <rdfs:label>Conference Paper</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#FundingBody -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#FundingBody">
+        <rdfs:comment>An organisation that provides research funding, such as a national science foundation, charity, or government agency.</rdfs:comment>
+        <rdfs:label>Funding Body</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Grant -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Grant">
+        <rdfs:comment>A funded research grant associated with one or more publications.</rdfs:comment>
+        <rdfs:label>Grant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Institution -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Institution">
+        <rdfs:comment>An organisation with which researchers may be affiliated.</rdfs:comment>
+        <rdfs:label>Institution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Journal -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Journal">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#PublicationVenue"/>
+        <rdfs:comment>A periodical publication containing peer-reviewed academic articles.</rdfs:comment>
+        <rdfs:label>Journal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#JournalArticle -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#JournalArticle">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:comment>A peer-reviewed article published in a scholarly journal.</rdfs:comment>
+        <rdfs:label>Journal Article</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Keyword -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Keyword">
+        <rdfs:comment>A term or phrase assigned to a publication to describe its content.</rdfs:comment>
+        <rdfs:label>Keyword</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#OpenAccessStatus -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#OpenAccessStatus">
+        <rdfs:comment>The open access category of a publication. Controlled vocabulary: gold, green, bronze, closed. Follows the MOMo controlled-vocabulary (purple-box) pattern.</rdfs:comment>
+        <rdfs:label>Open Access Status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#PeerReviewRecord -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#PeerReviewRecord">
+        <rdfs:comment>A record capturing the peer-review status of a publication, including whether it was reviewed and at which venue. Follows the MOMo provenance pattern.</rdfs:comment>
+        <rdfs:label>Peer Review Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Person -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Person">
+        <rdfs:comment>A human being involved in academic research activities.</rdfs:comment>
+        <rdfs:label>Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Preprint -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Preprint">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:comment>A version of a research paper made publicly available before formal peer review, typically deposited on a preprint server such as arXiv or bioRxiv.</rdfs:comment>
+        <rdfs:label>Preprint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Publication -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Publication">
+        <rdfs:comment>The top-level class for all types of academic research outputs.</rdfs:comment>
+        <rdfs:label>Publication</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#PublicationVenue -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#PublicationVenue">
+        <rdfs:comment>A channel or forum where academic research is formally published or presented.</rdfs:comment>
+        <rdfs:label>Publication Venue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Publisher -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Publisher">
+        <rdfs:comment>An organisation responsible for producing and distributing publications.</rdfs:comment>
+        <rdfs:label>Publisher</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#ResearchGroup -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#ResearchGroup">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Institution"/>
+        <rdfs:comment>A named research group or laboratory operating within a university or research institute.</rdfs:comment>
+        <rdfs:label>Research Group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#ResearchInstitute -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#ResearchInstitute">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Institution"/>
+        <rdfs:comment>A dedicated research organisation, not necessarily degree-granting.</rdfs:comment>
+        <rdfs:label>Research Institute</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#ResearchTopic -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#ResearchTopic">
+        <rdfs:comment>A subject area or thematic domain of academic research.</rdfs:comment>
+        <rdfs:label>Research Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Researcher -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Researcher">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Person"/>
+        <rdfs:comment>A person who conducts academic research.</rdfs:comment>
+        <rdfs:label>Researcher</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Reviewer -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Reviewer">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Researcher"/>
+        <rdfs:comment>A researcher who peer-reviews academic manuscripts.</rdfs:comment>
+        <rdfs:label>Reviewer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#TechnicalReport -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#TechnicalReport">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:comment>A formal report describing the results or progress of technical research.</rdfs:comment>
+        <rdfs:label>Technical Report</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Thesis -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Thesis">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Publication"/>
+        <rdfs:comment>A doctoral dissertation or master&apos;s thesis submitted to an academic institution.</rdfs:comment>
+        <rdfs:label>Thesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#University -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#University">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Institution"/>
+        <rdfs:comment>A higher-education institution that conducts research.</rdfs:comment>
+        <rdfs:label>University</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/arpo#Workshop -->
+
+
+    <owl:Class rdf:about="https://example.org/arpo#Workshop">
+        <rdfs:subClassOf rdf:resource="https://example.org/arpo#Conference"/>
+        <rdfs:comment>A smaller, more focused academic event often co-located with a major conference.</rdfs:comment>
+        <rdfs:label>Workshop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://example.org/arpo#BronzeOA -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#BronzeOA">
+        <rdf:type rdf:resource="https://example.org/arpo#OpenAccessStatus"/>
+        <hasAccessType>bronze</hasAccessType>
+        <rdfs:comment>Free to read on the publisher site but without an open licence.</rdfs:comment>
+        <rdfs:label>Bronze Open Access</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#ClosedAccess -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#ClosedAccess">
+        <rdf:type rdf:resource="https://example.org/arpo#OpenAccessStatus"/>
+        <hasAccessType>closed</hasAccessType>
+        <rdfs:comment>Access is restricted; requires subscription or payment.</rdfs:comment>
+        <rdfs:label>Closed Access</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#FunderNSF -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#FunderNSF">
+        <rdf:type rdf:resource="https://example.org/arpo#FundingBody"/>
+        <rdfs:label>National Science Foundation (NSF)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#GoldOA -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#GoldOA">
+        <rdf:type rdf:resource="https://example.org/arpo#OpenAccessStatus"/>
+        <hasAccessType>gold</hasAccessType>
+        <rdfs:comment>Immediately freely available via the publisher under an open licence.</rdfs:comment>
+        <rdfs:label>Gold Open Access</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#GreenOA -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#GreenOA">
+        <rdf:type rdf:resource="https://example.org/arpo#OpenAccessStatus"/>
+        <hasAccessType>green</hasAccessType>
+        <rdfs:comment>Self-archived in a repository (preprint or accepted manuscript).</rdfs:comment>
+        <rdfs:label>Green Open Access</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#ISWC2025 -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#ISWC2025">
+        <rdf:type rdf:resource="https://example.org/arpo#Conference"/>
+        <rdfs:label>24th International Semantic Web Conference (ISWC 2025)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#JWebSemantics -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#JWebSemantics">
+        <rdf:type rdf:resource="https://example.org/arpo#Journal"/>
+        <hasISSN>1570-8268</hasISSN>
+        <hasImpactFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.2</hasImpactFactor>
+        <rdfs:label>Journal of Web Semantics</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#KnowledgeEngineering -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#KnowledgeEngineering">
+        <rdf:type rdf:resource="https://example.org/arpo#ResearchTopic"/>
+        <hasTopicName>Knowledge Engineering</hasTopicName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#KnowledgeLabA -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#KnowledgeLabA">
+        <rdf:type rdf:resource="https://example.org/arpo#ResearchGroup"/>
+        <rdfs:label>Knowledge Engineering Lab, Example University A</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#MachineLearning -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#MachineLearning">
+        <rdf:type rdf:resource="https://example.org/arpo#ResearchTopic"/>
+        <hasTopicName>Machine Learning</hasTopicName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#SemanticWeb -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#SemanticWeb">
+        <rdf:type rdf:resource="https://example.org/arpo#ResearchTopic"/>
+        <hasTopicName>Semantic Web</hasTopicName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#UniExampleA -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#UniExampleA">
+        <rdf:type rdf:resource="https://example.org/arpo#University"/>
+        <rdfs:label>Example University A</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#UniExampleB -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#UniExampleB">
+        <rdf:type rdf:resource="https://example.org/arpo#University"/>
+        <rdfs:label>Example University B</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#affRec_alice_A -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#affRec_alice_A">
+        <rdf:type rdf:resource="https://example.org/arpo#AffiliationRecord"/>
+        <affiliatedInstitution rdf:resource="https://example.org/arpo#UniExampleA"/>
+        <hasStartYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2020</hasStartYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#author_alice -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#author_alice">
+        <rdf:type rdf:resource="https://example.org/arpo#Author"/>
+        <hasAffiliationRecord rdf:resource="https://example.org/arpo#affRec_alice_A"/>
+        <hasCoAuthor rdf:resource="https://example.org/arpo#author_bob"/>
+        <isAffiliatedWith rdf:resource="https://example.org/arpo#UniExampleA"/>
+        <memberOf rdf:resource="https://example.org/arpo#KnowledgeLabA"/>
+        <hasName>Alice Smith</hasName>
+        <hasORCID>0000-0001-2345-6789</hasORCID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#author_bob -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#author_bob">
+        <rdf:type rdf:resource="https://example.org/arpo#Author"/>
+        <isAffiliatedWith rdf:resource="https://example.org/arpo#UniExampleB"/>
+        <hasName>Bob Jones</hasName>
+        <hasORCID>0000-0002-9876-5432</hasORCID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#grant_arpo_2025 -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#grant_arpo_2025">
+        <rdf:type rdf:resource="https://example.org/arpo#Grant"/>
+        <fundedBy rdf:resource="https://example.org/arpo#FunderNSF"/>
+        <hasGrantNumber>NSF-2025-KE-001</hasGrantNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#kw_linkeddata -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#kw_linkeddata">
+        <rdf:type rdf:resource="https://example.org/arpo#Keyword"/>
+        <representsArea rdf:resource="https://example.org/arpo#SemanticWeb"/>
+        <hasLabel>Linked Data</hasLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#kw_llm -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#kw_llm">
+        <rdf:type rdf:resource="https://example.org/arpo#Keyword"/>
+        <representsArea rdf:resource="https://example.org/arpo#MachineLearning"/>
+        <hasLabel>Large Language Model</hasLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#kw_ontology -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#kw_ontology">
+        <rdf:type rdf:resource="https://example.org/arpo#Keyword"/>
+        <representsArea rdf:resource="https://example.org/arpo#KnowledgeEngineering"/>
+        <hasLabel>ontology</hasLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#kw_owl -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#kw_owl">
+        <rdf:type rdf:resource="https://example.org/arpo#Keyword"/>
+        <representsArea rdf:resource="https://example.org/arpo#SemanticWeb"/>
+        <hasLabel>OWL</hasLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#paper_001 -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#paper_001">
+        <rdf:type rdf:resource="https://example.org/arpo#JournalArticle"/>
+        <cites rdf:resource="https://example.org/arpo#paper_002"/>
+        <hasAuthor rdf:resource="https://example.org/arpo#author_alice"/>
+        <hasAuthor rdf:resource="https://example.org/arpo#author_bob"/>
+        <hasFunding rdf:resource="https://example.org/arpo#grant_arpo_2025"/>
+        <hasKeyword rdf:resource="https://example.org/arpo#kw_linkeddata"/>
+        <hasKeyword rdf:resource="https://example.org/arpo#kw_ontology"/>
+        <hasKeyword rdf:resource="https://example.org/arpo#kw_owl"/>
+        <hasOpenAccessStatus rdf:resource="https://example.org/arpo#GoldOA"/>
+        <hasResearchTopic rdf:resource="https://example.org/arpo#KnowledgeEngineering"/>
+        <hasResearchTopic rdf:resource="https://example.org/arpo#SemanticWeb"/>
+        <publishedIn rdf:resource="https://example.org/arpo#JWebSemantics"/>
+        <hasAbstract>We present ARPO, a formal OWL 2 DL ontology for representing the academic research publication domain, supporting semantic search and citation analysis.</hasAbstract>
+        <hasCitationCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasCitationCount>
+        <hasDOI>10.1000/arpo.2025.001</hasDOI>
+        <hasIssue>3</hasIssue>
+        <hasPageEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">118</hasPageEnd>
+        <hasPageStart rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">101</hasPageStart>
+        <hasTitle>An Ontology for Academic Research Publications</hasTitle>
+        <hasVolume>12</hasVolume>
+        <hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2025</hasYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#paper_002 -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#paper_002">
+        <rdf:type rdf:resource="https://example.org/arpo#ConferencePaper"/>
+        <hasAuthor rdf:resource="https://example.org/arpo#author_alice"/>
+        <hasKeyword rdf:resource="https://example.org/arpo#kw_ontology"/>
+        <hasOpenAccessStatus rdf:resource="https://example.org/arpo#GreenOA"/>
+        <hasResearchTopic rdf:resource="https://example.org/arpo#KnowledgeEngineering"/>
+        <publishedIn rdf:resource="https://example.org/arpo#ISWC2025"/>
+        <hasCitationCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasCitationCount>
+        <hasDOI>10.1000/arpo.2025.002</hasDOI>
+        <hasPageEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">57</hasPageEnd>
+        <hasPageStart rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">44</hasPageStart>
+        <hasTitle>Competency Questions in Ontology Engineering: A Systematic Review</hasTitle>
+        <hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2025</hasYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/arpo#preprint_001 -->
+
+
+    <owl:NamedIndividual rdf:about="https://example.org/arpo#preprint_001">
+        <rdf:type rdf:resource="https://example.org/arpo#Preprint"/>
+        <cites rdf:resource="https://example.org/arpo#paper_001"/>
+        <hasAuthor rdf:resource="https://example.org/arpo#author_alice"/>
+        <hasAuthor rdf:resource="https://example.org/arpo#author_bob"/>
+        <hasKeyword rdf:resource="https://example.org/arpo#kw_llm"/>
+        <hasKeyword rdf:resource="https://example.org/arpo#kw_ontology"/>
+        <hasOpenAccessStatus rdf:resource="https://example.org/arpo#GoldOA"/>
+        <hasResearchTopic rdf:resource="https://example.org/arpo#KnowledgeEngineering"/>
+        <hasResearchTopic rdf:resource="https://example.org/arpo#MachineLearning"/>
+        <hasDOI>10.48550/arXiv.2026.00001</hasDOI>
+        <hasTitle>LLM-Based Population of the ARPO Knowledge Graph: A Pilot Study</hasTitle>
+        <hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2026</hasYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://example.org/arpo#BookChapter"/>
+            <rdf:Description rdf:about="https://example.org/arpo#ConferencePaper"/>
+            <rdf:Description rdf:about="https://example.org/arpo#JournalArticle"/>
+            <rdf:Description rdf:about="https://example.org/arpo#Preprint"/>
+            <rdf:Description rdf:about="https://example.org/arpo#TechnicalReport"/>
+            <rdf:Description rdf:about="https://example.org/arpo#Thesis"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://example.org/arpo#Company"/>
+            <rdf:Description rdf:about="https://example.org/arpo#ResearchGroup"/>
+            <rdf:Description rdf:about="https://example.org/arpo#ResearchInstitute"/>
+            <rdf:Description rdf:about="https://example.org/arpo#University"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://example.org/arpo#BronzeOA"/>
+            <rdf:Description rdf:about="https://example.org/arpo#ClosedAccess"/>
+            <rdf:Description rdf:about="https://example.org/arpo#GoldOA"/>
+            <rdf:Description rdf:about="https://example.org/arpo#GreenOA"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

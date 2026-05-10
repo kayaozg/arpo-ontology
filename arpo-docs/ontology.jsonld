@@ -1,0 +1,1389 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://example.org/arpo#BookChapter"
+    }, {
+      "@id" : "https://example.org/arpo#ConferencePaper"
+    }, {
+      "@id" : "https://example.org/arpo#JournalArticle"
+    }, {
+      "@id" : "https://example.org/arpo#Preprint"
+    }, {
+      "@id" : "https://example.org/arpo#TechnicalReport"
+    }, {
+      "@id" : "https://example.org/arpo#Thesis"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://example.org/arpo#BronzeOA"
+    }, {
+      "@id" : "https://example.org/arpo#ClosedAccess"
+    }, {
+      "@id" : "https://example.org/arpo#GoldOA"
+    }, {
+      "@id" : "https://example.org/arpo#GreenOA"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid8",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://example.org/arpo#Company"
+    }, {
+      "@id" : "https://example.org/arpo#ResearchGroup"
+    }, {
+      "@id" : "https://example.org/arpo#ResearchInstitute"
+    }, {
+      "@id" : "https://example.org/arpo#University"
+    } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/date",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#changeNote",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://example.org/arpo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@value" : "Fırat Kaya Özgenç"
+  } ],
+  "http://purl.org/dc/terms/date" : [ {
+    "@value" : "2026-05-05"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "A formal OWL 2 DL ontology for representing academic research publications, authors, venues, institutions, citation relationships, funding, and open access status."
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@value" : "Academic Research Publication Ontology (ARPO)"
+  } ],
+  "http://www.w3.org/2002/07/owl#priorVersion" : [ {
+    "@id" : "https://example.org/arpo/1.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "https://example.org/arpo/2.0"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#changeNote" : [ {
+    "@value" : "v2.0: Added ResearchGroup, Grant, FundingBody, AffiliationRecord, OpenAccessStatus, PeerReviewRecord, Preprint classes. Added 6 new object properties and 4 new data properties. Modelling follows MOMo methodology with record and controlled-vocabulary patterns."
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#AffiliationRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A time-bounded record linking an Author to an Institution for a given period. Follows the MOMo record pattern, which reifies relationships that change over time."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Affiliation Record"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Author",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A researcher who has authored one or more publications."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Author"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Researcher"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#BookChapter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A chapter or section published within an edited academic book."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Book Chapter"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#BronzeOA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#OpenAccessStatus"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Free to read on the publisher site but without an open licence."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Bronze Open Access"
+  } ],
+  "https://example.org/arpo#hasAccessType" : [ {
+    "@value" : "bronze"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Citation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A formal reference from one publication to another."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Citation"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#ClosedAccess",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#OpenAccessStatus"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Access is restricted; requires subscription or payment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Closed Access"
+  } ],
+  "https://example.org/arpo#hasAccessType" : [ {
+    "@value" : "closed"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Company",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An industrial or commercial organisation engaged in research."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Company"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Institution"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Conference",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An academic event at which research papers are presented and published in proceedings."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Conference"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#PublicationVenue"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://example.org/arpo#Journal"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#ConferencePaper",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A paper accepted and presented at an academic conference or workshop."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Conference Paper"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#FunderNSF",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#FundingBody"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "National Science Foundation (NSF)"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#FundingBody",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An organisation that provides research funding, such as a national science foundation, charity, or government agency."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Funding Body"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#GoldOA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#OpenAccessStatus"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Immediately freely available via the publisher under an open licence."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Gold Open Access"
+  } ],
+  "https://example.org/arpo#hasAccessType" : [ {
+    "@value" : "gold"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Grant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A funded research grant associated with one or more publications."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Grant"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#GreenOA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#OpenAccessStatus"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Self-archived in a repository (preprint or accepted manuscript)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Green Open Access"
+  } ],
+  "https://example.org/arpo#hasAccessType" : [ {
+    "@value" : "green"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#ISWC2025",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#Conference"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "24th International Semantic Web Conference (ISWC 2025)"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Institution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An organisation with which researchers may be affiliated."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Institution"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#JWebSemantics",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#Journal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Journal of Web Semantics"
+  } ],
+  "https://example.org/arpo#hasISSN" : [ {
+    "@value" : "1570-8268"
+  } ],
+  "https://example.org/arpo#hasImpactFactor" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "3.2"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Journal",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A periodical publication containing peer-reviewed academic articles."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Journal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#PublicationVenue"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#JournalArticle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A peer-reviewed article published in a scholarly journal."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Journal Article"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Keyword",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A term or phrase assigned to a publication to describe its content."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Keyword"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#KnowledgeEngineering",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#ResearchTopic"
+  } ],
+  "https://example.org/arpo#hasTopicName" : [ {
+    "@value" : "Knowledge Engineering"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#KnowledgeLabA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#ResearchGroup"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Knowledge Engineering Lab, Example University A"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#MachineLearning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#ResearchTopic"
+  } ],
+  "https://example.org/arpo#hasTopicName" : [ {
+    "@value" : "Machine Learning"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#OpenAccessStatus",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The open access category of a publication. Controlled vocabulary: gold, green, bronze, closed. Follows the MOMo controlled-vocabulary (purple-box) pattern."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Open Access Status"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#PeerReviewRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A record capturing the peer-review status of a publication, including whether it was reviewed and at which venue. Follows the MOMo provenance pattern."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Peer Review Record"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A human being involved in academic research activities."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Person"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Preprint",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A version of a research paper made publicly available before formal peer review, typically deposited on a preprint server such as arXiv or bioRxiv."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Preprint"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Publication",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The top-level class for all types of academic research outputs."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Publication"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#PublicationVenue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A channel or forum where academic research is formally published or presented."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Publication Venue"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An organisation responsible for producing and distributing publications."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Publisher"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#ResearchGroup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A named research group or laboratory operating within a university or research institute."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Research Group"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Institution"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#ResearchInstitute",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A dedicated research organisation, not necessarily degree-granting."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Research Institute"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Institution"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#ResearchTopic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A subject area or thematic domain of academic research."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Research Topic"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Researcher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A person who conducts academic research."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Researcher"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Person"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Reviewer",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A researcher who peer-reviews academic manuscripts."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Reviewer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Researcher"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#SemanticWeb",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#ResearchTopic"
+  } ],
+  "https://example.org/arpo#hasTopicName" : [ {
+    "@value" : "Semantic Web"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#TechnicalReport",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A formal report describing the results or progress of technical research."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Technical Report"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Thesis",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A doctoral dissertation or master's thesis submitted to an academic institution."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Thesis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#UniExampleA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#University"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Example University A"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#UniExampleB",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#University"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Example University B"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#University",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A higher-education institution that conducts research."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "University"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Institution"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#Workshop",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A smaller, more focused academic event often co-located with a major conference."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Workshop"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://example.org/arpo#Conference"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#affRec_alice_A",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#AffiliationRecord"
+  } ],
+  "https://example.org/arpo#affiliatedInstitution" : [ {
+    "@id" : "https://example.org/arpo#UniExampleA"
+  } ],
+  "https://example.org/arpo#hasStartYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2020"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#affiliatedInstitution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The institution named in an affiliation record."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#AffiliationRecord"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "affiliated institution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Institution"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#author_alice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#Author"
+  } ],
+  "https://example.org/arpo#hasAffiliationRecord" : [ {
+    "@id" : "https://example.org/arpo#affRec_alice_A"
+  } ],
+  "https://example.org/arpo#hasCoAuthor" : [ {
+    "@id" : "https://example.org/arpo#author_bob"
+  } ],
+  "https://example.org/arpo#hasName" : [ {
+    "@value" : "Alice Smith"
+  } ],
+  "https://example.org/arpo#hasORCID" : [ {
+    "@value" : "0000-0001-2345-6789"
+  } ],
+  "https://example.org/arpo#isAffiliatedWith" : [ {
+    "@id" : "https://example.org/arpo#UniExampleA"
+  } ],
+  "https://example.org/arpo#memberOf" : [ {
+    "@id" : "https://example.org/arpo#KnowledgeLabA"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#author_bob",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#Author"
+  } ],
+  "https://example.org/arpo#hasName" : [ {
+    "@value" : "Bob Jones"
+  } ],
+  "https://example.org/arpo#hasORCID" : [ {
+    "@value" : "0000-0002-9876-5432"
+  } ],
+  "https://example.org/arpo#isAffiliatedWith" : [ {
+    "@id" : "https://example.org/arpo#UniExampleB"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#cites",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a publication to another publication it cites."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "cites"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#fundedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a grant to the funding body that issued it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Grant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "funded by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#FundingBody"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#grant_arpo_2025",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#Grant"
+  } ],
+  "https://example.org/arpo#fundedBy" : [ {
+    "@id" : "https://example.org/arpo#FunderNSF"
+  } ],
+  "https://example.org/arpo#hasGrantNumber" : [ {
+    "@value" : "NSF-2025-KE-001"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasAbstract",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The abstract or summary text of the publication."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has abstract"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasAccessType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The open access type label. Expected values: gold, green, bronze, closed."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#OpenAccessStatus"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has access type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasAffiliation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates an institution to a researcher affiliated with it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Institution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has affiliation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Researcher"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://example.org/arpo#isAffiliatedWith"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasAffiliationRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates an author to a time-bounded affiliation record. Implements the MOMo record pattern to allow tracking of affiliation changes over time."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Author"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has affiliation record"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#AffiliationRecord"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasAuthor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a publication to one of its authors."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has author"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Author"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasCitationCount",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The total number of times the publication has been cited."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has citation count"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasCoAuthor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates two authors who have co-authored at least one publication together."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Author"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has co-author"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Author"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasDOI",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The Digital Object Identifier (DOI) of the publication."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has DOI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasEndYear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The year in which the affiliation described by this record ended. Omitted if the affiliation is current."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#AffiliationRecord"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has end year"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasFunding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a publication to a grant that funded the research."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has funding"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Grant"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasGrantNumber",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The official award or grant number assigned by the funding body."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Grant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has grant number"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasISSN",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The International Standard Serial Number of the journal."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Journal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has ISSN"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasImpactFactor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The current Journal Impact Factor (JIF) of the journal."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Journal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has impact factor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasIssue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The journal issue in which the article appears."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#JournalArticle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has issue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasKeyword",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a publication to one of its descriptor keywords."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has keyword"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Keyword"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The textual label of the keyword."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Keyword"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has label"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The full name of the person."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasORCID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The Open Researcher and Contributor ID (ORCID) of the researcher."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Researcher"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has ORCID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasOpenAccessStatus",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a publication to its open access category (gold, green, bronze, or closed)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has open access status"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#OpenAccessStatus"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasPageEnd",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The last page number of the publication."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has page end"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasPageStart",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The first page number of the publication."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has page start"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasPeerReviewRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a publication to a record of its peer-review status."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has peer review record"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#PeerReviewRecord"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasResearchTopic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a publication to a research topic it covers."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has research topic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#ResearchTopic"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasStartYear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The year in which the affiliation described by this record began."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#AffiliationRecord"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has start year"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasTitle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The full title of the publication."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasTopicName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The name of the research topic."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#ResearchTopic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has topic name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasVolume",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The journal volume in which the article appears."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#JournalArticle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has volume"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#hasYear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The year in which the publication was published."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has year"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#isAffiliatedWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Direct affiliation link between a researcher and an institution (simplified role-chain shortcut, following Norouzi et al. 2025)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Researcher"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is affiliated with"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Institution"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#isAuthorOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates an author to a publication they have authored."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Author"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is author of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://example.org/arpo#hasAuthor"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#isCitedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a publication to publications that cite it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is cited by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://example.org/arpo#cites"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#kw_linkeddata",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#Keyword"
+  } ],
+  "https://example.org/arpo#hasLabel" : [ {
+    "@value" : "Linked Data"
+  } ],
+  "https://example.org/arpo#representsArea" : [ {
+    "@id" : "https://example.org/arpo#SemanticWeb"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#kw_llm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#Keyword"
+  } ],
+  "https://example.org/arpo#hasLabel" : [ {
+    "@value" : "Large Language Model"
+  } ],
+  "https://example.org/arpo#representsArea" : [ {
+    "@id" : "https://example.org/arpo#MachineLearning"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#kw_ontology",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#Keyword"
+  } ],
+  "https://example.org/arpo#hasLabel" : [ {
+    "@value" : "ontology"
+  } ],
+  "https://example.org/arpo#representsArea" : [ {
+    "@id" : "https://example.org/arpo#KnowledgeEngineering"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#kw_owl",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#Keyword"
+  } ],
+  "https://example.org/arpo#hasLabel" : [ {
+    "@value" : "OWL"
+  } ],
+  "https://example.org/arpo#representsArea" : [ {
+    "@id" : "https://example.org/arpo#SemanticWeb"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#memberOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates an author to a research group they belong to."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Author"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "member of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#ResearchGroup"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#paper_001",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#JournalArticle"
+  } ],
+  "https://example.org/arpo#cites" : [ {
+    "@id" : "https://example.org/arpo#paper_002"
+  } ],
+  "https://example.org/arpo#hasAbstract" : [ {
+    "@value" : "We present ARPO, a formal OWL 2 DL ontology for representing the academic research publication domain, supporting semantic search and citation analysis."
+  } ],
+  "https://example.org/arpo#hasAuthor" : [ {
+    "@id" : "https://example.org/arpo#author_alice"
+  }, {
+    "@id" : "https://example.org/arpo#author_bob"
+  } ],
+  "https://example.org/arpo#hasCitationCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://example.org/arpo#hasDOI" : [ {
+    "@value" : "10.1000/arpo.2025.001"
+  } ],
+  "https://example.org/arpo#hasFunding" : [ {
+    "@id" : "https://example.org/arpo#grant_arpo_2025"
+  } ],
+  "https://example.org/arpo#hasIssue" : [ {
+    "@value" : "3"
+  } ],
+  "https://example.org/arpo#hasKeyword" : [ {
+    "@id" : "https://example.org/arpo#kw_linkeddata"
+  }, {
+    "@id" : "https://example.org/arpo#kw_ontology"
+  }, {
+    "@id" : "https://example.org/arpo#kw_owl"
+  } ],
+  "https://example.org/arpo#hasOpenAccessStatus" : [ {
+    "@id" : "https://example.org/arpo#GoldOA"
+  } ],
+  "https://example.org/arpo#hasPageEnd" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "118"
+  } ],
+  "https://example.org/arpo#hasPageStart" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "101"
+  } ],
+  "https://example.org/arpo#hasResearchTopic" : [ {
+    "@id" : "https://example.org/arpo#KnowledgeEngineering"
+  }, {
+    "@id" : "https://example.org/arpo#SemanticWeb"
+  } ],
+  "https://example.org/arpo#hasTitle" : [ {
+    "@value" : "An Ontology for Academic Research Publications"
+  } ],
+  "https://example.org/arpo#hasVolume" : [ {
+    "@value" : "12"
+  } ],
+  "https://example.org/arpo#hasYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2025"
+  } ],
+  "https://example.org/arpo#publishedIn" : [ {
+    "@id" : "https://example.org/arpo#JWebSemantics"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#paper_002",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#ConferencePaper"
+  } ],
+  "https://example.org/arpo#hasAuthor" : [ {
+    "@id" : "https://example.org/arpo#author_alice"
+  } ],
+  "https://example.org/arpo#hasCitationCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ],
+  "https://example.org/arpo#hasDOI" : [ {
+    "@value" : "10.1000/arpo.2025.002"
+  } ],
+  "https://example.org/arpo#hasKeyword" : [ {
+    "@id" : "https://example.org/arpo#kw_ontology"
+  } ],
+  "https://example.org/arpo#hasOpenAccessStatus" : [ {
+    "@id" : "https://example.org/arpo#GreenOA"
+  } ],
+  "https://example.org/arpo#hasPageEnd" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "57"
+  } ],
+  "https://example.org/arpo#hasPageStart" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "44"
+  } ],
+  "https://example.org/arpo#hasResearchTopic" : [ {
+    "@id" : "https://example.org/arpo#KnowledgeEngineering"
+  } ],
+  "https://example.org/arpo#hasTitle" : [ {
+    "@value" : "Competency Questions in Ontology Engineering: A Systematic Review"
+  } ],
+  "https://example.org/arpo#hasYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2025"
+  } ],
+  "https://example.org/arpo#publishedIn" : [ {
+    "@id" : "https://example.org/arpo#ISWC2025"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#preprint_001",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://example.org/arpo#Preprint"
+  } ],
+  "https://example.org/arpo#cites" : [ {
+    "@id" : "https://example.org/arpo#paper_001"
+  } ],
+  "https://example.org/arpo#hasAuthor" : [ {
+    "@id" : "https://example.org/arpo#author_alice"
+  }, {
+    "@id" : "https://example.org/arpo#author_bob"
+  } ],
+  "https://example.org/arpo#hasDOI" : [ {
+    "@value" : "10.48550/arXiv.2026.00001"
+  } ],
+  "https://example.org/arpo#hasKeyword" : [ {
+    "@id" : "https://example.org/arpo#kw_llm"
+  }, {
+    "@id" : "https://example.org/arpo#kw_ontology"
+  } ],
+  "https://example.org/arpo#hasOpenAccessStatus" : [ {
+    "@id" : "https://example.org/arpo#GoldOA"
+  } ],
+  "https://example.org/arpo#hasResearchTopic" : [ {
+    "@id" : "https://example.org/arpo#KnowledgeEngineering"
+  }, {
+    "@id" : "https://example.org/arpo#MachineLearning"
+  } ],
+  "https://example.org/arpo#hasTitle" : [ {
+    "@value" : "LLM-Based Population of the ARPO Knowledge Graph: A Pilot Study"
+  } ],
+  "https://example.org/arpo#hasYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2026"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#publishedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a publication to the publisher responsible for it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "published by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#Publisher"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#publishedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a publication to the venue in which it was published."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Publication"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "published in"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#PublicationVenue"
+  } ]
+}, {
+  "@id" : "https://example.org/arpo#representsArea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a keyword to the broader research topic it represents."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://example.org/arpo#Keyword"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "represents area"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://example.org/arpo#ResearchTopic"
+  } ]
+} ]

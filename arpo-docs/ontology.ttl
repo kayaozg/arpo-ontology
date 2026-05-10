@@ -1,0 +1,817 @@
+@prefix : <https://example.org/arpo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://example.org/arpo#> .
+
+<https://example.org/arpo> rdf:type owl:Ontology ;
+                            owl:versionIRI <https://example.org/arpo/2.0> ;
+                            <http://purl.org/dc/terms/creator> "Fırat Kaya Özgenç" ;
+                            <http://purl.org/dc/terms/date> "2026-05-05" ;
+                            <http://purl.org/dc/terms/description> "A formal OWL 2 DL ontology for representing academic research publications, authors, venues, institutions, citation relationships, funding, and open access status." ;
+                            <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                            <http://purl.org/dc/terms/title> "Academic Research Publication Ontology (ARPO)" ;
+                            owl:priorVersion <https://example.org/arpo/1.0> ;
+                            <http://www.w3.org/2004/02/skos/core#changeNote> "v2.0: Added ResearchGroup, Grant, FundingBody, AffiliationRecord, OpenAccessStatus, PeerReviewRecord, Preprint classes. Added 6 new object properties and 4 new data properties. Modelling follows MOMo methodology with record and controlled-vocabulary patterns." .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+<http://www.w3.org/2004/02/skos/core#changeNote> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://example.org/arpo#affiliatedInstitution
+:affiliatedInstitution rdf:type owl:ObjectProperty ;
+                       rdfs:domain :AffiliationRecord ;
+                       rdfs:range :Institution ;
+                       rdfs:comment "The institution named in an affiliation record." ;
+                       rdfs:label "affiliated institution" .
+
+
+###  https://example.org/arpo#cites
+:cites rdf:type owl:ObjectProperty ,
+                owl:IrreflexiveProperty ;
+       rdfs:domain :Publication ;
+       rdfs:range :Publication ;
+       rdfs:comment "Relates a publication to another publication it cites." ;
+       rdfs:label "cites" .
+
+
+###  https://example.org/arpo#fundedBy
+:fundedBy rdf:type owl:ObjectProperty ;
+          rdfs:domain :Grant ;
+          rdfs:range :FundingBody ;
+          rdfs:comment "Relates a grant to the funding body that issued it." ;
+          rdfs:label "funded by" .
+
+
+###  https://example.org/arpo#hasAffiliation
+:hasAffiliation rdf:type owl:ObjectProperty ;
+                owl:inverseOf :isAffiliatedWith ;
+                rdfs:domain :Institution ;
+                rdfs:range :Researcher ;
+                rdfs:comment "Relates an institution to a researcher affiliated with it." ;
+                rdfs:label "has affiliation" .
+
+
+###  https://example.org/arpo#hasAffiliationRecord
+:hasAffiliationRecord rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Author ;
+                      rdfs:range :AffiliationRecord ;
+                      rdfs:comment "Relates an author to a time-bounded affiliation record. Implements the MOMo record pattern to allow tracking of affiliation changes over time." ;
+                      rdfs:label "has affiliation record" .
+
+
+###  https://example.org/arpo#hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           rdfs:domain :Publication ;
+           rdfs:range :Author ;
+           rdfs:comment "Relates a publication to one of its authors." ;
+           rdfs:label "has author" .
+
+
+###  https://example.org/arpo#hasCoAuthor
+:hasCoAuthor rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
+             rdfs:domain :Author ;
+             rdfs:range :Author ;
+             rdfs:comment "Relates two authors who have co-authored at least one publication together." ;
+             rdfs:label "has co-author" .
+
+
+###  https://example.org/arpo#hasFunding
+:hasFunding rdf:type owl:ObjectProperty ;
+            rdfs:domain :Publication ;
+            rdfs:range :Grant ;
+            rdfs:comment "Relates a publication to a grant that funded the research." ;
+            rdfs:label "has funding" .
+
+
+###  https://example.org/arpo#hasKeyword
+:hasKeyword rdf:type owl:ObjectProperty ;
+            rdfs:domain :Publication ;
+            rdfs:range :Keyword ;
+            rdfs:comment "Relates a publication to one of its descriptor keywords." ;
+            rdfs:label "has keyword" .
+
+
+###  https://example.org/arpo#hasOpenAccessStatus
+:hasOpenAccessStatus rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :Publication ;
+                     rdfs:range :OpenAccessStatus ;
+                     rdfs:comment "Relates a publication to its open access category (gold, green, bronze, or closed)." ;
+                     rdfs:label "has open access status" .
+
+
+###  https://example.org/arpo#hasPeerReviewRecord
+:hasPeerReviewRecord rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :Publication ;
+                     rdfs:range :PeerReviewRecord ;
+                     rdfs:comment "Relates a publication to a record of its peer-review status." ;
+                     rdfs:label "has peer review record" .
+
+
+###  https://example.org/arpo#hasResearchTopic
+:hasResearchTopic rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Publication ;
+                  rdfs:range :ResearchTopic ;
+                  rdfs:comment "Relates a publication to a research topic it covers." ;
+                  rdfs:label "has research topic" .
+
+
+###  https://example.org/arpo#isAffiliatedWith
+:isAffiliatedWith rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Researcher ;
+                  rdfs:range :Institution ;
+                  rdfs:comment "Direct affiliation link between a researcher and an institution (simplified role-chain shortcut, following Norouzi et al. 2025)." ;
+                  rdfs:label "is affiliated with" .
+
+
+###  https://example.org/arpo#isAuthorOf
+:isAuthorOf rdf:type owl:ObjectProperty ;
+            owl:inverseOf :hasAuthor ;
+            rdfs:domain :Author ;
+            rdfs:range :Publication ;
+            rdfs:comment "Relates an author to a publication they have authored." ;
+            rdfs:label "is author of" .
+
+
+###  https://example.org/arpo#isCitedBy
+:isCitedBy rdf:type owl:ObjectProperty ;
+           owl:inverseOf :cites ;
+           rdfs:domain :Publication ;
+           rdfs:range :Publication ;
+           rdfs:comment "Relates a publication to publications that cite it." ;
+           rdfs:label "is cited by" .
+
+
+###  https://example.org/arpo#memberOf
+:memberOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :Author ;
+          rdfs:range :ResearchGroup ;
+          rdfs:comment "Relates an author to a research group they belong to." ;
+          rdfs:label "member of" .
+
+
+###  https://example.org/arpo#publishedBy
+:publishedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Publication ;
+             rdfs:range :Publisher ;
+             rdfs:comment "Relates a publication to the publisher responsible for it." ;
+             rdfs:label "published by" .
+
+
+###  https://example.org/arpo#publishedIn
+:publishedIn rdf:type owl:ObjectProperty ;
+             rdfs:domain :Publication ;
+             rdfs:range :PublicationVenue ;
+             rdfs:comment "Relates a publication to the venue in which it was published." ;
+             rdfs:label "published in" .
+
+
+###  https://example.org/arpo#representsArea
+:representsArea rdf:type owl:ObjectProperty ;
+                rdfs:domain :Keyword ;
+                rdfs:range :ResearchTopic ;
+                rdfs:comment "Relates a keyword to the broader research topic it represents." ;
+                rdfs:label "represents area" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://example.org/arpo#hasAbstract
+:hasAbstract rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Publication ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The abstract or summary text of the publication." ;
+             rdfs:label "has abstract" .
+
+
+###  https://example.org/arpo#hasAccessType
+:hasAccessType rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :OpenAccessStatus ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The open access type label. Expected values: gold, green, bronze, closed." ;
+               rdfs:label "has access type" .
+
+
+###  https://example.org/arpo#hasCitationCount
+:hasCitationCount rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Publication ;
+                  rdfs:range xsd:integer ;
+                  rdfs:comment "The total number of times the publication has been cited." ;
+                  rdfs:label "has citation count" .
+
+
+###  https://example.org/arpo#hasDOI
+:hasDOI rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Publication ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The Digital Object Identifier (DOI) of the publication." ;
+        rdfs:label "has DOI" .
+
+
+###  https://example.org/arpo#hasEndYear
+:hasEndYear rdf:type owl:DatatypeProperty ;
+            rdfs:domain :AffiliationRecord ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The year in which the affiliation described by this record ended. Omitted if the affiliation is current." ;
+            rdfs:label "has end year" .
+
+
+###  https://example.org/arpo#hasGrantNumber
+:hasGrantNumber rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Grant ;
+                rdfs:range xsd:string ;
+                rdfs:comment "The official award or grant number assigned by the funding body." ;
+                rdfs:label "has grant number" .
+
+
+###  https://example.org/arpo#hasISSN
+:hasISSN rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Journal ;
+         rdfs:range xsd:string ;
+         rdfs:comment "The International Standard Serial Number of the journal." ;
+         rdfs:label "has ISSN" .
+
+
+###  https://example.org/arpo#hasImpactFactor
+:hasImpactFactor rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :Journal ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:comment "The current Journal Impact Factor (JIF) of the journal." ;
+                 rdfs:label "has impact factor" .
+
+
+###  https://example.org/arpo#hasIssue
+:hasIssue rdf:type owl:DatatypeProperty ;
+          rdfs:domain :JournalArticle ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The journal issue in which the article appears." ;
+          rdfs:label "has issue" .
+
+
+###  https://example.org/arpo#hasLabel
+:hasLabel rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Keyword ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The textual label of the keyword." ;
+          rdfs:label "has label" .
+
+
+###  https://example.org/arpo#hasName
+:hasName rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:string ;
+         rdfs:comment "The full name of the person." ;
+         rdfs:label "has name" .
+
+
+###  https://example.org/arpo#hasORCID
+:hasORCID rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Researcher ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The Open Researcher and Contributor ID (ORCID) of the researcher." ;
+          rdfs:label "has ORCID" .
+
+
+###  https://example.org/arpo#hasPageEnd
+:hasPageEnd rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Publication ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The last page number of the publication." ;
+            rdfs:label "has page end" .
+
+
+###  https://example.org/arpo#hasPageStart
+:hasPageStart rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Publication ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "The first page number of the publication." ;
+              rdfs:label "has page start" .
+
+
+###  https://example.org/arpo#hasStartYear
+:hasStartYear rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AffiliationRecord ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "The year in which the affiliation described by this record began." ;
+              rdfs:label "has start year" .
+
+
+###  https://example.org/arpo#hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Publication ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The full title of the publication." ;
+          rdfs:label "has title" .
+
+
+###  https://example.org/arpo#hasTopicName
+:hasTopicName rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :ResearchTopic ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The name of the research topic." ;
+              rdfs:label "has topic name" .
+
+
+###  https://example.org/arpo#hasVolume
+:hasVolume rdf:type owl:DatatypeProperty ;
+           rdfs:domain :JournalArticle ;
+           rdfs:range xsd:string ;
+           rdfs:comment "The journal volume in which the article appears." ;
+           rdfs:label "has volume" .
+
+
+###  https://example.org/arpo#hasYear
+:hasYear rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Publication ;
+         rdfs:range xsd:integer ;
+         rdfs:comment "The year in which the publication was published." ;
+         rdfs:label "has year" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://example.org/arpo#AffiliationRecord
+:AffiliationRecord rdf:type owl:Class ;
+                   rdfs:comment "A time-bounded record linking an Author to an Institution for a given period. Follows the MOMo record pattern, which reifies relationships that change over time." ;
+                   rdfs:label "Affiliation Record" .
+
+
+###  https://example.org/arpo#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :Researcher ;
+        rdfs:comment "A researcher who has authored one or more publications." ;
+        rdfs:label "Author" .
+
+
+###  https://example.org/arpo#BookChapter
+:BookChapter rdf:type owl:Class ;
+             rdfs:subClassOf :Publication ;
+             rdfs:comment "A chapter or section published within an edited academic book." ;
+             rdfs:label "Book Chapter" .
+
+
+###  https://example.org/arpo#Citation
+:Citation rdf:type owl:Class ;
+          rdfs:comment "A formal reference from one publication to another." ;
+          rdfs:label "Citation" .
+
+
+###  https://example.org/arpo#Company
+:Company rdf:type owl:Class ;
+         rdfs:subClassOf :Institution ;
+         rdfs:comment "An industrial or commercial organisation engaged in research." ;
+         rdfs:label "Company" .
+
+
+###  https://example.org/arpo#Conference
+:Conference rdf:type owl:Class ;
+            rdfs:subClassOf :PublicationVenue ;
+            owl:disjointWith :Journal ;
+            rdfs:comment "An academic event at which research papers are presented and published in proceedings." ;
+            rdfs:label "Conference" .
+
+
+###  https://example.org/arpo#ConferencePaper
+:ConferencePaper rdf:type owl:Class ;
+                 rdfs:subClassOf :Publication ;
+                 rdfs:comment "A paper accepted and presented at an academic conference or workshop." ;
+                 rdfs:label "Conference Paper" .
+
+
+###  https://example.org/arpo#FundingBody
+:FundingBody rdf:type owl:Class ;
+             rdfs:comment "An organisation that provides research funding, such as a national science foundation, charity, or government agency." ;
+             rdfs:label "Funding Body" .
+
+
+###  https://example.org/arpo#Grant
+:Grant rdf:type owl:Class ;
+       rdfs:comment "A funded research grant associated with one or more publications." ;
+       rdfs:label "Grant" .
+
+
+###  https://example.org/arpo#Institution
+:Institution rdf:type owl:Class ;
+             rdfs:comment "An organisation with which researchers may be affiliated." ;
+             rdfs:label "Institution" .
+
+
+###  https://example.org/arpo#Journal
+:Journal rdf:type owl:Class ;
+         rdfs:subClassOf :PublicationVenue ;
+         rdfs:comment "A periodical publication containing peer-reviewed academic articles." ;
+         rdfs:label "Journal" .
+
+
+###  https://example.org/arpo#JournalArticle
+:JournalArticle rdf:type owl:Class ;
+                rdfs:subClassOf :Publication ;
+                rdfs:comment "A peer-reviewed article published in a scholarly journal." ;
+                rdfs:label "Journal Article" .
+
+
+###  https://example.org/arpo#Keyword
+:Keyword rdf:type owl:Class ;
+         rdfs:comment "A term or phrase assigned to a publication to describe its content." ;
+         rdfs:label "Keyword" .
+
+
+###  https://example.org/arpo#OpenAccessStatus
+:OpenAccessStatus rdf:type owl:Class ;
+                  rdfs:comment "The open access category of a publication. Controlled vocabulary: gold, green, bronze, closed. Follows the MOMo controlled-vocabulary (purple-box) pattern." ;
+                  rdfs:label "Open Access Status" .
+
+
+###  https://example.org/arpo#PeerReviewRecord
+:PeerReviewRecord rdf:type owl:Class ;
+                  rdfs:comment "A record capturing the peer-review status of a publication, including whether it was reviewed and at which venue. Follows the MOMo provenance pattern." ;
+                  rdfs:label "Peer Review Record" .
+
+
+###  https://example.org/arpo#Person
+:Person rdf:type owl:Class ;
+        rdfs:comment "A human being involved in academic research activities." ;
+        rdfs:label "Person" .
+
+
+###  https://example.org/arpo#Preprint
+:Preprint rdf:type owl:Class ;
+          rdfs:subClassOf :Publication ;
+          rdfs:comment "A version of a research paper made publicly available before formal peer review, typically deposited on a preprint server such as arXiv or bioRxiv." ;
+          rdfs:label "Preprint" .
+
+
+###  https://example.org/arpo#Publication
+:Publication rdf:type owl:Class ;
+             rdfs:comment "The top-level class for all types of academic research outputs." ;
+             rdfs:label "Publication" .
+
+
+###  https://example.org/arpo#PublicationVenue
+:PublicationVenue rdf:type owl:Class ;
+                  rdfs:comment "A channel or forum where academic research is formally published or presented." ;
+                  rdfs:label "Publication Venue" .
+
+
+###  https://example.org/arpo#Publisher
+:Publisher rdf:type owl:Class ;
+           rdfs:comment "An organisation responsible for producing and distributing publications." ;
+           rdfs:label "Publisher" .
+
+
+###  https://example.org/arpo#ResearchGroup
+:ResearchGroup rdf:type owl:Class ;
+               rdfs:subClassOf :Institution ;
+               rdfs:comment "A named research group or laboratory operating within a university or research institute." ;
+               rdfs:label "Research Group" .
+
+
+###  https://example.org/arpo#ResearchInstitute
+:ResearchInstitute rdf:type owl:Class ;
+                   rdfs:subClassOf :Institution ;
+                   rdfs:comment "A dedicated research organisation, not necessarily degree-granting." ;
+                   rdfs:label "Research Institute" .
+
+
+###  https://example.org/arpo#ResearchTopic
+:ResearchTopic rdf:type owl:Class ;
+               rdfs:comment "A subject area or thematic domain of academic research." ;
+               rdfs:label "Research Topic" .
+
+
+###  https://example.org/arpo#Researcher
+:Researcher rdf:type owl:Class ;
+            rdfs:subClassOf :Person ;
+            rdfs:comment "A person who conducts academic research." ;
+            rdfs:label "Researcher" .
+
+
+###  https://example.org/arpo#Reviewer
+:Reviewer rdf:type owl:Class ;
+          rdfs:subClassOf :Researcher ;
+          rdfs:comment "A researcher who peer-reviews academic manuscripts." ;
+          rdfs:label "Reviewer" .
+
+
+###  https://example.org/arpo#TechnicalReport
+:TechnicalReport rdf:type owl:Class ;
+                 rdfs:subClassOf :Publication ;
+                 rdfs:comment "A formal report describing the results or progress of technical research." ;
+                 rdfs:label "Technical Report" .
+
+
+###  https://example.org/arpo#Thesis
+:Thesis rdf:type owl:Class ;
+        rdfs:subClassOf :Publication ;
+        rdfs:comment "A doctoral dissertation or master's thesis submitted to an academic institution." ;
+        rdfs:label "Thesis" .
+
+
+###  https://example.org/arpo#University
+:University rdf:type owl:Class ;
+            rdfs:subClassOf :Institution ;
+            rdfs:comment "A higher-education institution that conducts research." ;
+            rdfs:label "University" .
+
+
+###  https://example.org/arpo#Workshop
+:Workshop rdf:type owl:Class ;
+          rdfs:subClassOf :Conference ;
+          rdfs:comment "A smaller, more focused academic event often co-located with a major conference." ;
+          rdfs:label "Workshop" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://example.org/arpo#BronzeOA
+:BronzeOA rdf:type owl:NamedIndividual ,
+                   :OpenAccessStatus ;
+          :hasAccessType "bronze" ;
+          rdfs:comment "Free to read on the publisher site but without an open licence." ;
+          rdfs:label "Bronze Open Access" .
+
+
+###  https://example.org/arpo#ClosedAccess
+:ClosedAccess rdf:type owl:NamedIndividual ,
+                       :OpenAccessStatus ;
+              :hasAccessType "closed" ;
+              rdfs:comment "Access is restricted; requires subscription or payment." ;
+              rdfs:label "Closed Access" .
+
+
+###  https://example.org/arpo#FunderNSF
+:FunderNSF rdf:type owl:NamedIndividual ,
+                    :FundingBody ;
+           rdfs:label "National Science Foundation (NSF)" .
+
+
+###  https://example.org/arpo#GoldOA
+:GoldOA rdf:type owl:NamedIndividual ,
+                 :OpenAccessStatus ;
+        :hasAccessType "gold" ;
+        rdfs:comment "Immediately freely available via the publisher under an open licence." ;
+        rdfs:label "Gold Open Access" .
+
+
+###  https://example.org/arpo#GreenOA
+:GreenOA rdf:type owl:NamedIndividual ,
+                  :OpenAccessStatus ;
+         :hasAccessType "green" ;
+         rdfs:comment "Self-archived in a repository (preprint or accepted manuscript)." ;
+         rdfs:label "Green Open Access" .
+
+
+###  https://example.org/arpo#ISWC2025
+:ISWC2025 rdf:type owl:NamedIndividual ,
+                   :Conference ;
+          rdfs:label "24th International Semantic Web Conference (ISWC 2025)" .
+
+
+###  https://example.org/arpo#JWebSemantics
+:JWebSemantics rdf:type owl:NamedIndividual ,
+                        :Journal ;
+               :hasISSN "1570-8268" ;
+               :hasImpactFactor 3.2 ;
+               rdfs:label "Journal of Web Semantics" .
+
+
+###  https://example.org/arpo#KnowledgeEngineering
+:KnowledgeEngineering rdf:type owl:NamedIndividual ,
+                               :ResearchTopic ;
+                      :hasTopicName "Knowledge Engineering" .
+
+
+###  https://example.org/arpo#KnowledgeLabA
+:KnowledgeLabA rdf:type owl:NamedIndividual ,
+                        :ResearchGroup ;
+               rdfs:label "Knowledge Engineering Lab, Example University A" .
+
+
+###  https://example.org/arpo#MachineLearning
+:MachineLearning rdf:type owl:NamedIndividual ,
+                          :ResearchTopic ;
+                 :hasTopicName "Machine Learning" .
+
+
+###  https://example.org/arpo#SemanticWeb
+:SemanticWeb rdf:type owl:NamedIndividual ,
+                      :ResearchTopic ;
+             :hasTopicName "Semantic Web" .
+
+
+###  https://example.org/arpo#UniExampleA
+:UniExampleA rdf:type owl:NamedIndividual ,
+                      :University ;
+             rdfs:label "Example University A" .
+
+
+###  https://example.org/arpo#UniExampleB
+:UniExampleB rdf:type owl:NamedIndividual ,
+                      :University ;
+             rdfs:label "Example University B" .
+
+
+###  https://example.org/arpo#affRec_alice_A
+:affRec_alice_A rdf:type owl:NamedIndividual ,
+                         :AffiliationRecord ;
+                :affiliatedInstitution :UniExampleA ;
+                :hasStartYear 2020 .
+
+
+###  https://example.org/arpo#author_alice
+:author_alice rdf:type owl:NamedIndividual ,
+                       :Author ;
+              :hasAffiliationRecord :affRec_alice_A ;
+              :hasCoAuthor :author_bob ;
+              :isAffiliatedWith :UniExampleA ;
+              :memberOf :KnowledgeLabA ;
+              :hasName "Alice Smith" ;
+              :hasORCID "0000-0001-2345-6789" .
+
+
+###  https://example.org/arpo#author_bob
+:author_bob rdf:type owl:NamedIndividual ,
+                     :Author ;
+            :isAffiliatedWith :UniExampleB ;
+            :hasName "Bob Jones" ;
+            :hasORCID "0000-0002-9876-5432" .
+
+
+###  https://example.org/arpo#grant_arpo_2025
+:grant_arpo_2025 rdf:type owl:NamedIndividual ,
+                          :Grant ;
+                 :fundedBy :FunderNSF ;
+                 :hasGrantNumber "NSF-2025-KE-001" .
+
+
+###  https://example.org/arpo#kw_linkeddata
+:kw_linkeddata rdf:type owl:NamedIndividual ,
+                        :Keyword ;
+               :representsArea :SemanticWeb ;
+               :hasLabel "Linked Data" .
+
+
+###  https://example.org/arpo#kw_llm
+:kw_llm rdf:type owl:NamedIndividual ,
+                 :Keyword ;
+        :representsArea :MachineLearning ;
+        :hasLabel "Large Language Model" .
+
+
+###  https://example.org/arpo#kw_ontology
+:kw_ontology rdf:type owl:NamedIndividual ,
+                      :Keyword ;
+             :representsArea :KnowledgeEngineering ;
+             :hasLabel "ontology" .
+
+
+###  https://example.org/arpo#kw_owl
+:kw_owl rdf:type owl:NamedIndividual ,
+                 :Keyword ;
+        :representsArea :SemanticWeb ;
+        :hasLabel "OWL" .
+
+
+###  https://example.org/arpo#paper_001
+:paper_001 rdf:type owl:NamedIndividual ,
+                    :JournalArticle ;
+           :cites :paper_002 ;
+           :hasAuthor :author_alice ,
+                      :author_bob ;
+           :hasFunding :grant_arpo_2025 ;
+           :hasKeyword :kw_linkeddata ,
+                       :kw_ontology ,
+                       :kw_owl ;
+           :hasOpenAccessStatus :GoldOA ;
+           :hasResearchTopic :KnowledgeEngineering ,
+                             :SemanticWeb ;
+           :publishedIn :JWebSemantics ;
+           :hasAbstract "We present ARPO, a formal OWL 2 DL ontology for representing the academic research publication domain, supporting semantic search and citation analysis." ;
+           :hasCitationCount 0 ;
+           :hasDOI "10.1000/arpo.2025.001" ;
+           :hasIssue "3" ;
+           :hasPageEnd 118 ;
+           :hasPageStart 101 ;
+           :hasTitle "An Ontology for Academic Research Publications" ;
+           :hasVolume "12" ;
+           :hasYear 2025 .
+
+
+###  https://example.org/arpo#paper_002
+:paper_002 rdf:type owl:NamedIndividual ,
+                    :ConferencePaper ;
+           :hasAuthor :author_alice ;
+           :hasKeyword :kw_ontology ;
+           :hasOpenAccessStatus :GreenOA ;
+           :hasResearchTopic :KnowledgeEngineering ;
+           :publishedIn :ISWC2025 ;
+           :hasCitationCount 0 ;
+           :hasDOI "10.1000/arpo.2025.002" ;
+           :hasPageEnd 57 ;
+           :hasPageStart 44 ;
+           :hasTitle "Competency Questions in Ontology Engineering: A Systematic Review" ;
+           :hasYear 2025 .
+
+
+###  https://example.org/arpo#preprint_001
+:preprint_001 rdf:type owl:NamedIndividual ,
+                       :Preprint ;
+              :cites :paper_001 ;
+              :hasAuthor :author_alice ,
+                         :author_bob ;
+              :hasKeyword :kw_llm ,
+                          :kw_ontology ;
+              :hasOpenAccessStatus :GoldOA ;
+              :hasResearchTopic :KnowledgeEngineering ,
+                                :MachineLearning ;
+              :hasDOI "10.48550/arXiv.2026.00001" ;
+              :hasTitle "LLM-Based Population of the ARPO Knowledge Graph: A Pilot Study" ;
+              :hasYear 2026 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BookChapter
+                :ConferencePaper
+                :JournalArticle
+                :Preprint
+                :TechnicalReport
+                :Thesis
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Company
+                :ResearchGroup
+                :ResearchInstitute
+                :University
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :BronzeOA
+                        :ClosedAccess
+                        :GoldOA
+                        :GreenOA
+                      )
+] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

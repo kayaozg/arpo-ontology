@@ -1,0 +1,763 @@
+<https://example.org/arpo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://example.org/arpo> <http://www.w3.org/2002/07/owl#versionIRI> <https://example.org/arpo/2.0> .
+<https://example.org/arpo> <http://purl.org/dc/terms/creator> "Fırat Kaya Özgenç" .
+<https://example.org/arpo> <http://purl.org/dc/terms/date> "2026-05-05" .
+<https://example.org/arpo> <http://purl.org/dc/terms/description> "A formal OWL 2 DL ontology for representing academic research publications, authors, venues, institutions, citation relationships, funding, and open access status." .
+<https://example.org/arpo> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://example.org/arpo> <http://purl.org/dc/terms/title> "Academic Research Publication Ontology (ARPO)" .
+<https://example.org/arpo> <http://www.w3.org/2002/07/owl#priorVersion> <https://example.org/arpo/1.0> .
+<https://example.org/arpo> <http://www.w3.org/2004/02/skos/core#changeNote> "v2.0: Added ResearchGroup, Grant, FundingBody, AffiliationRecord, OpenAccessStatus, PeerReviewRecord, Preprint classes. Added 6 new object properties and 4 new data properties. Modelling follows MOMo methodology with record and controlled-vocabulary patterns." .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#changeNote
+<http://www.w3.org/2004/02/skos/core#changeNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://example.org/arpo#affiliatedInstitution
+<https://example.org/arpo#affiliatedInstitution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#affiliatedInstitution> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#AffiliationRecord> .
+<https://example.org/arpo#affiliatedInstitution> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Institution> .
+<https://example.org/arpo#affiliatedInstitution> <http://www.w3.org/2000/01/rdf-schema#comment> "The institution named in an affiliation record." .
+<https://example.org/arpo#affiliatedInstitution> <http://www.w3.org/2000/01/rdf-schema#label> "affiliated institution" .
+# 
+# https://example.org/arpo#cites
+<https://example.org/arpo#cites> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#cites> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<https://example.org/arpo#cites> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#cites> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#cites> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a publication to another publication it cites." .
+<https://example.org/arpo#cites> <http://www.w3.org/2000/01/rdf-schema#label> "cites" .
+# 
+# https://example.org/arpo#fundedBy
+<https://example.org/arpo#fundedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#fundedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Grant> .
+<https://example.org/arpo#fundedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#FundingBody> .
+<https://example.org/arpo#fundedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a grant to the funding body that issued it." .
+<https://example.org/arpo#fundedBy> <http://www.w3.org/2000/01/rdf-schema#label> "funded by" .
+# 
+# https://example.org/arpo#hasAffiliation
+<https://example.org/arpo#hasAffiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#hasAffiliation> <http://www.w3.org/2002/07/owl#inverseOf> <https://example.org/arpo#isAffiliatedWith> .
+<https://example.org/arpo#hasAffiliation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Institution> .
+<https://example.org/arpo#hasAffiliation> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Researcher> .
+<https://example.org/arpo#hasAffiliation> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an institution to a researcher affiliated with it." .
+<https://example.org/arpo#hasAffiliation> <http://www.w3.org/2000/01/rdf-schema#label> "has affiliation" .
+# 
+# https://example.org/arpo#hasAffiliationRecord
+<https://example.org/arpo#hasAffiliationRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#hasAffiliationRecord> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Author> .
+<https://example.org/arpo#hasAffiliationRecord> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#AffiliationRecord> .
+<https://example.org/arpo#hasAffiliationRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an author to a time-bounded affiliation record. Implements the MOMo record pattern to allow tracking of affiliation changes over time." .
+<https://example.org/arpo#hasAffiliationRecord> <http://www.w3.org/2000/01/rdf-schema#label> "has affiliation record" .
+# 
+# https://example.org/arpo#hasAuthor
+<https://example.org/arpo#hasAuthor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#hasAuthor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasAuthor> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Author> .
+<https://example.org/arpo#hasAuthor> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a publication to one of its authors." .
+<https://example.org/arpo#hasAuthor> <http://www.w3.org/2000/01/rdf-schema#label> "has author" .
+# 
+# https://example.org/arpo#hasCoAuthor
+<https://example.org/arpo#hasCoAuthor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#hasCoAuthor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://example.org/arpo#hasCoAuthor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Author> .
+<https://example.org/arpo#hasCoAuthor> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Author> .
+<https://example.org/arpo#hasCoAuthor> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates two authors who have co-authored at least one publication together." .
+<https://example.org/arpo#hasCoAuthor> <http://www.w3.org/2000/01/rdf-schema#label> "has co-author" .
+# 
+# https://example.org/arpo#hasFunding
+<https://example.org/arpo#hasFunding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#hasFunding> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasFunding> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Grant> .
+<https://example.org/arpo#hasFunding> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a publication to a grant that funded the research." .
+<https://example.org/arpo#hasFunding> <http://www.w3.org/2000/01/rdf-schema#label> "has funding" .
+# 
+# https://example.org/arpo#hasKeyword
+<https://example.org/arpo#hasKeyword> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#hasKeyword> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasKeyword> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Keyword> .
+<https://example.org/arpo#hasKeyword> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a publication to one of its descriptor keywords." .
+<https://example.org/arpo#hasKeyword> <http://www.w3.org/2000/01/rdf-schema#label> "has keyword" .
+# 
+# https://example.org/arpo#hasOpenAccessStatus
+<https://example.org/arpo#hasOpenAccessStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#hasOpenAccessStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasOpenAccessStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasOpenAccessStatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#OpenAccessStatus> .
+<https://example.org/arpo#hasOpenAccessStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a publication to its open access category (gold, green, bronze, or closed)." .
+<https://example.org/arpo#hasOpenAccessStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has open access status" .
+# 
+# https://example.org/arpo#hasPeerReviewRecord
+<https://example.org/arpo#hasPeerReviewRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#hasPeerReviewRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasPeerReviewRecord> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasPeerReviewRecord> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#PeerReviewRecord> .
+<https://example.org/arpo#hasPeerReviewRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a publication to a record of its peer-review status." .
+<https://example.org/arpo#hasPeerReviewRecord> <http://www.w3.org/2000/01/rdf-schema#label> "has peer review record" .
+# 
+# https://example.org/arpo#hasResearchTopic
+<https://example.org/arpo#hasResearchTopic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#hasResearchTopic> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasResearchTopic> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#ResearchTopic> .
+<https://example.org/arpo#hasResearchTopic> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a publication to a research topic it covers." .
+<https://example.org/arpo#hasResearchTopic> <http://www.w3.org/2000/01/rdf-schema#label> "has research topic" .
+# 
+# https://example.org/arpo#isAffiliatedWith
+<https://example.org/arpo#isAffiliatedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Researcher> .
+<https://example.org/arpo#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Institution> .
+<https://example.org/arpo#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Direct affiliation link between a researcher and an institution (simplified role-chain shortcut, following Norouzi et al. 2025)." .
+<https://example.org/arpo#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#label> "is affiliated with" .
+# 
+# https://example.org/arpo#isAuthorOf
+<https://example.org/arpo#isAuthorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#isAuthorOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://example.org/arpo#hasAuthor> .
+<https://example.org/arpo#isAuthorOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Author> .
+<https://example.org/arpo#isAuthorOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#isAuthorOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an author to a publication they have authored." .
+<https://example.org/arpo#isAuthorOf> <http://www.w3.org/2000/01/rdf-schema#label> "is author of" .
+# 
+# https://example.org/arpo#isCitedBy
+<https://example.org/arpo#isCitedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#isCitedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://example.org/arpo#cites> .
+<https://example.org/arpo#isCitedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#isCitedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#isCitedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a publication to publications that cite it." .
+<https://example.org/arpo#isCitedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is cited by" .
+# 
+# https://example.org/arpo#memberOf
+<https://example.org/arpo#memberOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#memberOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Author> .
+<https://example.org/arpo#memberOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#ResearchGroup> .
+<https://example.org/arpo#memberOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an author to a research group they belong to." .
+<https://example.org/arpo#memberOf> <http://www.w3.org/2000/01/rdf-schema#label> "member of" .
+# 
+# https://example.org/arpo#publishedBy
+<https://example.org/arpo#publishedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#publishedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#publishedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#Publisher> .
+<https://example.org/arpo#publishedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a publication to the publisher responsible for it." .
+<https://example.org/arpo#publishedBy> <http://www.w3.org/2000/01/rdf-schema#label> "published by" .
+# 
+# https://example.org/arpo#publishedIn
+<https://example.org/arpo#publishedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#publishedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#publishedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#PublicationVenue> .
+<https://example.org/arpo#publishedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a publication to the venue in which it was published." .
+<https://example.org/arpo#publishedIn> <http://www.w3.org/2000/01/rdf-schema#label> "published in" .
+# 
+# https://example.org/arpo#representsArea
+<https://example.org/arpo#representsArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/arpo#representsArea> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Keyword> .
+<https://example.org/arpo#representsArea> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/arpo#ResearchTopic> .
+<https://example.org/arpo#representsArea> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a keyword to the broader research topic it represents." .
+<https://example.org/arpo#representsArea> <http://www.w3.org/2000/01/rdf-schema#label> "represents area" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://example.org/arpo#hasAbstract
+<https://example.org/arpo#hasAbstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasAbstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasAbstract> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasAbstract> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasAbstract> <http://www.w3.org/2000/01/rdf-schema#comment> "The abstract or summary text of the publication." .
+<https://example.org/arpo#hasAbstract> <http://www.w3.org/2000/01/rdf-schema#label> "has abstract" .
+# 
+# https://example.org/arpo#hasAccessType
+<https://example.org/arpo#hasAccessType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasAccessType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasAccessType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#OpenAccessStatus> .
+<https://example.org/arpo#hasAccessType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasAccessType> <http://www.w3.org/2000/01/rdf-schema#comment> "The open access type label. Expected values: gold, green, bronze, closed." .
+<https://example.org/arpo#hasAccessType> <http://www.w3.org/2000/01/rdf-schema#label> "has access type" .
+# 
+# https://example.org/arpo#hasCitationCount
+<https://example.org/arpo#hasCitationCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasCitationCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasCitationCount> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasCitationCount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#hasCitationCount> <http://www.w3.org/2000/01/rdf-schema#comment> "The total number of times the publication has been cited." .
+<https://example.org/arpo#hasCitationCount> <http://www.w3.org/2000/01/rdf-schema#label> "has citation count" .
+# 
+# https://example.org/arpo#hasDOI
+<https://example.org/arpo#hasDOI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasDOI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasDOI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasDOI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasDOI> <http://www.w3.org/2000/01/rdf-schema#comment> "The Digital Object Identifier (DOI) of the publication." .
+<https://example.org/arpo#hasDOI> <http://www.w3.org/2000/01/rdf-schema#label> "has DOI" .
+# 
+# https://example.org/arpo#hasEndYear
+<https://example.org/arpo#hasEndYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasEndYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#AffiliationRecord> .
+<https://example.org/arpo#hasEndYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#hasEndYear> <http://www.w3.org/2000/01/rdf-schema#comment> "The year in which the affiliation described by this record ended. Omitted if the affiliation is current." .
+<https://example.org/arpo#hasEndYear> <http://www.w3.org/2000/01/rdf-schema#label> "has end year" .
+# 
+# https://example.org/arpo#hasGrantNumber
+<https://example.org/arpo#hasGrantNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasGrantNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasGrantNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Grant> .
+<https://example.org/arpo#hasGrantNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasGrantNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "The official award or grant number assigned by the funding body." .
+<https://example.org/arpo#hasGrantNumber> <http://www.w3.org/2000/01/rdf-schema#label> "has grant number" .
+# 
+# https://example.org/arpo#hasISSN
+<https://example.org/arpo#hasISSN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasISSN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasISSN> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Journal> .
+<https://example.org/arpo#hasISSN> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasISSN> <http://www.w3.org/2000/01/rdf-schema#comment> "The International Standard Serial Number of the journal." .
+<https://example.org/arpo#hasISSN> <http://www.w3.org/2000/01/rdf-schema#label> "has ISSN" .
+# 
+# https://example.org/arpo#hasImpactFactor
+<https://example.org/arpo#hasImpactFactor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasImpactFactor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasImpactFactor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Journal> .
+<https://example.org/arpo#hasImpactFactor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://example.org/arpo#hasImpactFactor> <http://www.w3.org/2000/01/rdf-schema#comment> "The current Journal Impact Factor (JIF) of the journal." .
+<https://example.org/arpo#hasImpactFactor> <http://www.w3.org/2000/01/rdf-schema#label> "has impact factor" .
+# 
+# https://example.org/arpo#hasIssue
+<https://example.org/arpo#hasIssue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasIssue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#JournalArticle> .
+<https://example.org/arpo#hasIssue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasIssue> <http://www.w3.org/2000/01/rdf-schema#comment> "The journal issue in which the article appears." .
+<https://example.org/arpo#hasIssue> <http://www.w3.org/2000/01/rdf-schema#label> "has issue" .
+# 
+# https://example.org/arpo#hasLabel
+<https://example.org/arpo#hasLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasLabel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Keyword> .
+<https://example.org/arpo#hasLabel> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasLabel> <http://www.w3.org/2000/01/rdf-schema#comment> "The textual label of the keyword." .
+<https://example.org/arpo#hasLabel> <http://www.w3.org/2000/01/rdf-schema#label> "has label" .
+# 
+# https://example.org/arpo#hasName
+<https://example.org/arpo#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Person> .
+<https://example.org/arpo#hasName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasName> <http://www.w3.org/2000/01/rdf-schema#comment> "The full name of the person." .
+<https://example.org/arpo#hasName> <http://www.w3.org/2000/01/rdf-schema#label> "has name" .
+# 
+# https://example.org/arpo#hasORCID
+<https://example.org/arpo#hasORCID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasORCID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasORCID> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Researcher> .
+<https://example.org/arpo#hasORCID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasORCID> <http://www.w3.org/2000/01/rdf-schema#comment> "The Open Researcher and Contributor ID (ORCID) of the researcher." .
+<https://example.org/arpo#hasORCID> <http://www.w3.org/2000/01/rdf-schema#label> "has ORCID" .
+# 
+# https://example.org/arpo#hasPageEnd
+<https://example.org/arpo#hasPageEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasPageEnd> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasPageEnd> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#hasPageEnd> <http://www.w3.org/2000/01/rdf-schema#comment> "The last page number of the publication." .
+<https://example.org/arpo#hasPageEnd> <http://www.w3.org/2000/01/rdf-schema#label> "has page end" .
+# 
+# https://example.org/arpo#hasPageStart
+<https://example.org/arpo#hasPageStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasPageStart> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasPageStart> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#hasPageStart> <http://www.w3.org/2000/01/rdf-schema#comment> "The first page number of the publication." .
+<https://example.org/arpo#hasPageStart> <http://www.w3.org/2000/01/rdf-schema#label> "has page start" .
+# 
+# https://example.org/arpo#hasStartYear
+<https://example.org/arpo#hasStartYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasStartYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#AffiliationRecord> .
+<https://example.org/arpo#hasStartYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#hasStartYear> <http://www.w3.org/2000/01/rdf-schema#comment> "The year in which the affiliation described by this record began." .
+<https://example.org/arpo#hasStartYear> <http://www.w3.org/2000/01/rdf-schema#label> "has start year" .
+# 
+# https://example.org/arpo#hasTitle
+<https://example.org/arpo#hasTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasTitle> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasTitle> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasTitle> <http://www.w3.org/2000/01/rdf-schema#comment> "The full title of the publication." .
+<https://example.org/arpo#hasTitle> <http://www.w3.org/2000/01/rdf-schema#label> "has title" .
+# 
+# https://example.org/arpo#hasTopicName
+<https://example.org/arpo#hasTopicName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasTopicName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasTopicName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#ResearchTopic> .
+<https://example.org/arpo#hasTopicName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasTopicName> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the research topic." .
+<https://example.org/arpo#hasTopicName> <http://www.w3.org/2000/01/rdf-schema#label> "has topic name" .
+# 
+# https://example.org/arpo#hasVolume
+<https://example.org/arpo#hasVolume> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasVolume> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#JournalArticle> .
+<https://example.org/arpo#hasVolume> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/arpo#hasVolume> <http://www.w3.org/2000/01/rdf-schema#comment> "The journal volume in which the article appears." .
+<https://example.org/arpo#hasVolume> <http://www.w3.org/2000/01/rdf-schema#label> "has volume" .
+# 
+# https://example.org/arpo#hasYear
+<https://example.org/arpo#hasYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/arpo#hasYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://example.org/arpo#hasYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#hasYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#hasYear> <http://www.w3.org/2000/01/rdf-schema#comment> "The year in which the publication was published." .
+<https://example.org/arpo#hasYear> <http://www.w3.org/2000/01/rdf-schema#label> "has year" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://example.org/arpo#AffiliationRecord
+<https://example.org/arpo#AffiliationRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#AffiliationRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "A time-bounded record linking an Author to an Institution for a given period. Follows the MOMo record pattern, which reifies relationships that change over time." .
+<https://example.org/arpo#AffiliationRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Affiliation Record" .
+# 
+# https://example.org/arpo#Author
+<https://example.org/arpo#Author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Author> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Researcher> .
+<https://example.org/arpo#Author> <http://www.w3.org/2000/01/rdf-schema#comment> "A researcher who has authored one or more publications." .
+<https://example.org/arpo#Author> <http://www.w3.org/2000/01/rdf-schema#label> "Author" .
+# 
+# https://example.org/arpo#BookChapter
+<https://example.org/arpo#BookChapter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#BookChapter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#BookChapter> <http://www.w3.org/2000/01/rdf-schema#comment> "A chapter or section published within an edited academic book." .
+<https://example.org/arpo#BookChapter> <http://www.w3.org/2000/01/rdf-schema#label> "Book Chapter" .
+# 
+# https://example.org/arpo#Citation
+<https://example.org/arpo#Citation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Citation> <http://www.w3.org/2000/01/rdf-schema#comment> "A formal reference from one publication to another." .
+<https://example.org/arpo#Citation> <http://www.w3.org/2000/01/rdf-schema#label> "Citation" .
+# 
+# https://example.org/arpo#Company
+<https://example.org/arpo#Company> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Company> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Institution> .
+<https://example.org/arpo#Company> <http://www.w3.org/2000/01/rdf-schema#comment> "An industrial or commercial organisation engaged in research." .
+<https://example.org/arpo#Company> <http://www.w3.org/2000/01/rdf-schema#label> "Company" .
+# 
+# https://example.org/arpo#Conference
+<https://example.org/arpo#Conference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Conference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#PublicationVenue> .
+<https://example.org/arpo#Conference> <http://www.w3.org/2002/07/owl#disjointWith> <https://example.org/arpo#Journal> .
+<https://example.org/arpo#Conference> <http://www.w3.org/2000/01/rdf-schema#comment> "An academic event at which research papers are presented and published in proceedings." .
+<https://example.org/arpo#Conference> <http://www.w3.org/2000/01/rdf-schema#label> "Conference" .
+# 
+# https://example.org/arpo#ConferencePaper
+<https://example.org/arpo#ConferencePaper> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#ConferencePaper> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#ConferencePaper> <http://www.w3.org/2000/01/rdf-schema#comment> "A paper accepted and presented at an academic conference or workshop." .
+<https://example.org/arpo#ConferencePaper> <http://www.w3.org/2000/01/rdf-schema#label> "Conference Paper" .
+# 
+# https://example.org/arpo#FundingBody
+<https://example.org/arpo#FundingBody> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#FundingBody> <http://www.w3.org/2000/01/rdf-schema#comment> "An organisation that provides research funding, such as a national science foundation, charity, or government agency." .
+<https://example.org/arpo#FundingBody> <http://www.w3.org/2000/01/rdf-schema#label> "Funding Body" .
+# 
+# https://example.org/arpo#Grant
+<https://example.org/arpo#Grant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Grant> <http://www.w3.org/2000/01/rdf-schema#comment> "A funded research grant associated with one or more publications." .
+<https://example.org/arpo#Grant> <http://www.w3.org/2000/01/rdf-schema#label> "Grant" .
+# 
+# https://example.org/arpo#Institution
+<https://example.org/arpo#Institution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Institution> <http://www.w3.org/2000/01/rdf-schema#comment> "An organisation with which researchers may be affiliated." .
+<https://example.org/arpo#Institution> <http://www.w3.org/2000/01/rdf-schema#label> "Institution" .
+# 
+# https://example.org/arpo#Journal
+<https://example.org/arpo#Journal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Journal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#PublicationVenue> .
+<https://example.org/arpo#Journal> <http://www.w3.org/2000/01/rdf-schema#comment> "A periodical publication containing peer-reviewed academic articles." .
+<https://example.org/arpo#Journal> <http://www.w3.org/2000/01/rdf-schema#label> "Journal" .
+# 
+# https://example.org/arpo#JournalArticle
+<https://example.org/arpo#JournalArticle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#JournalArticle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#JournalArticle> <http://www.w3.org/2000/01/rdf-schema#comment> "A peer-reviewed article published in a scholarly journal." .
+<https://example.org/arpo#JournalArticle> <http://www.w3.org/2000/01/rdf-schema#label> "Journal Article" .
+# 
+# https://example.org/arpo#Keyword
+<https://example.org/arpo#Keyword> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Keyword> <http://www.w3.org/2000/01/rdf-schema#comment> "A term or phrase assigned to a publication to describe its content." .
+<https://example.org/arpo#Keyword> <http://www.w3.org/2000/01/rdf-schema#label> "Keyword" .
+# 
+# https://example.org/arpo#OpenAccessStatus
+<https://example.org/arpo#OpenAccessStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#OpenAccessStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "The open access category of a publication. Controlled vocabulary: gold, green, bronze, closed. Follows the MOMo controlled-vocabulary (purple-box) pattern." .
+<https://example.org/arpo#OpenAccessStatus> <http://www.w3.org/2000/01/rdf-schema#label> "Open Access Status" .
+# 
+# https://example.org/arpo#PeerReviewRecord
+<https://example.org/arpo#PeerReviewRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#PeerReviewRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "A record capturing the peer-review status of a publication, including whether it was reviewed and at which venue. Follows the MOMo provenance pattern." .
+<https://example.org/arpo#PeerReviewRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Peer Review Record" .
+# 
+# https://example.org/arpo#Person
+<https://example.org/arpo#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A human being involved in academic research activities." .
+<https://example.org/arpo#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person" .
+# 
+# https://example.org/arpo#Preprint
+<https://example.org/arpo#Preprint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Preprint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#Preprint> <http://www.w3.org/2000/01/rdf-schema#comment> "A version of a research paper made publicly available before formal peer review, typically deposited on a preprint server such as arXiv or bioRxiv." .
+<https://example.org/arpo#Preprint> <http://www.w3.org/2000/01/rdf-schema#label> "Preprint" .
+# 
+# https://example.org/arpo#Publication
+<https://example.org/arpo#Publication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Publication> <http://www.w3.org/2000/01/rdf-schema#comment> "The top-level class for all types of academic research outputs." .
+<https://example.org/arpo#Publication> <http://www.w3.org/2000/01/rdf-schema#label> "Publication" .
+# 
+# https://example.org/arpo#PublicationVenue
+<https://example.org/arpo#PublicationVenue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#PublicationVenue> <http://www.w3.org/2000/01/rdf-schema#comment> "A channel or forum where academic research is formally published or presented." .
+<https://example.org/arpo#PublicationVenue> <http://www.w3.org/2000/01/rdf-schema#label> "Publication Venue" .
+# 
+# https://example.org/arpo#Publisher
+<https://example.org/arpo#Publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Publisher> <http://www.w3.org/2000/01/rdf-schema#comment> "An organisation responsible for producing and distributing publications." .
+<https://example.org/arpo#Publisher> <http://www.w3.org/2000/01/rdf-schema#label> "Publisher" .
+# 
+# https://example.org/arpo#ResearchGroup
+<https://example.org/arpo#ResearchGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#ResearchGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Institution> .
+<https://example.org/arpo#ResearchGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A named research group or laboratory operating within a university or research institute." .
+<https://example.org/arpo#ResearchGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Research Group" .
+# 
+# https://example.org/arpo#ResearchInstitute
+<https://example.org/arpo#ResearchInstitute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#ResearchInstitute> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Institution> .
+<https://example.org/arpo#ResearchInstitute> <http://www.w3.org/2000/01/rdf-schema#comment> "A dedicated research organisation, not necessarily degree-granting." .
+<https://example.org/arpo#ResearchInstitute> <http://www.w3.org/2000/01/rdf-schema#label> "Research Institute" .
+# 
+# https://example.org/arpo#ResearchTopic
+<https://example.org/arpo#ResearchTopic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#ResearchTopic> <http://www.w3.org/2000/01/rdf-schema#comment> "A subject area or thematic domain of academic research." .
+<https://example.org/arpo#ResearchTopic> <http://www.w3.org/2000/01/rdf-schema#label> "Research Topic" .
+# 
+# https://example.org/arpo#Researcher
+<https://example.org/arpo#Researcher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Researcher> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Person> .
+<https://example.org/arpo#Researcher> <http://www.w3.org/2000/01/rdf-schema#comment> "A person who conducts academic research." .
+<https://example.org/arpo#Researcher> <http://www.w3.org/2000/01/rdf-schema#label> "Researcher" .
+# 
+# https://example.org/arpo#Reviewer
+<https://example.org/arpo#Reviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Reviewer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Researcher> .
+<https://example.org/arpo#Reviewer> <http://www.w3.org/2000/01/rdf-schema#comment> "A researcher who peer-reviews academic manuscripts." .
+<https://example.org/arpo#Reviewer> <http://www.w3.org/2000/01/rdf-schema#label> "Reviewer" .
+# 
+# https://example.org/arpo#TechnicalReport
+<https://example.org/arpo#TechnicalReport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#TechnicalReport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#TechnicalReport> <http://www.w3.org/2000/01/rdf-schema#comment> "A formal report describing the results or progress of technical research." .
+<https://example.org/arpo#TechnicalReport> <http://www.w3.org/2000/01/rdf-schema#label> "Technical Report" .
+# 
+# https://example.org/arpo#Thesis
+<https://example.org/arpo#Thesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Thesis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Publication> .
+<https://example.org/arpo#Thesis> <http://www.w3.org/2000/01/rdf-schema#comment> "A doctoral dissertation or master's thesis submitted to an academic institution." .
+<https://example.org/arpo#Thesis> <http://www.w3.org/2000/01/rdf-schema#label> "Thesis" .
+# 
+# https://example.org/arpo#University
+<https://example.org/arpo#University> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#University> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Institution> .
+<https://example.org/arpo#University> <http://www.w3.org/2000/01/rdf-schema#comment> "A higher-education institution that conducts research." .
+<https://example.org/arpo#University> <http://www.w3.org/2000/01/rdf-schema#label> "University" .
+# 
+# https://example.org/arpo#Workshop
+<https://example.org/arpo#Workshop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/arpo#Workshop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/arpo#Conference> .
+<https://example.org/arpo#Workshop> <http://www.w3.org/2000/01/rdf-schema#comment> "A smaller, more focused academic event often co-located with a major conference." .
+<https://example.org/arpo#Workshop> <http://www.w3.org/2000/01/rdf-schema#label> "Workshop" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://example.org/arpo#BronzeOA
+<https://example.org/arpo#BronzeOA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#BronzeOA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#OpenAccessStatus> .
+<https://example.org/arpo#BronzeOA> <https://example.org/arpo#hasAccessType> "bronze" .
+<https://example.org/arpo#BronzeOA> <http://www.w3.org/2000/01/rdf-schema#comment> "Free to read on the publisher site but without an open licence." .
+<https://example.org/arpo#BronzeOA> <http://www.w3.org/2000/01/rdf-schema#label> "Bronze Open Access" .
+# 
+# https://example.org/arpo#ClosedAccess
+<https://example.org/arpo#ClosedAccess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#ClosedAccess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#OpenAccessStatus> .
+<https://example.org/arpo#ClosedAccess> <https://example.org/arpo#hasAccessType> "closed" .
+<https://example.org/arpo#ClosedAccess> <http://www.w3.org/2000/01/rdf-schema#comment> "Access is restricted; requires subscription or payment." .
+<https://example.org/arpo#ClosedAccess> <http://www.w3.org/2000/01/rdf-schema#label> "Closed Access" .
+# 
+# https://example.org/arpo#FunderNSF
+<https://example.org/arpo#FunderNSF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#FunderNSF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#FundingBody> .
+<https://example.org/arpo#FunderNSF> <http://www.w3.org/2000/01/rdf-schema#label> "National Science Foundation (NSF)" .
+# 
+# https://example.org/arpo#GoldOA
+<https://example.org/arpo#GoldOA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#GoldOA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#OpenAccessStatus> .
+<https://example.org/arpo#GoldOA> <https://example.org/arpo#hasAccessType> "gold" .
+<https://example.org/arpo#GoldOA> <http://www.w3.org/2000/01/rdf-schema#comment> "Immediately freely available via the publisher under an open licence." .
+<https://example.org/arpo#GoldOA> <http://www.w3.org/2000/01/rdf-schema#label> "Gold Open Access" .
+# 
+# https://example.org/arpo#GreenOA
+<https://example.org/arpo#GreenOA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#GreenOA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#OpenAccessStatus> .
+<https://example.org/arpo#GreenOA> <https://example.org/arpo#hasAccessType> "green" .
+<https://example.org/arpo#GreenOA> <http://www.w3.org/2000/01/rdf-schema#comment> "Self-archived in a repository (preprint or accepted manuscript)." .
+<https://example.org/arpo#GreenOA> <http://www.w3.org/2000/01/rdf-schema#label> "Green Open Access" .
+# 
+# https://example.org/arpo#ISWC2025
+<https://example.org/arpo#ISWC2025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#ISWC2025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#Conference> .
+<https://example.org/arpo#ISWC2025> <http://www.w3.org/2000/01/rdf-schema#label> "24th International Semantic Web Conference (ISWC 2025)" .
+# 
+# https://example.org/arpo#JWebSemantics
+<https://example.org/arpo#JWebSemantics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#JWebSemantics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#Journal> .
+<https://example.org/arpo#JWebSemantics> <https://example.org/arpo#hasISSN> "1570-8268" .
+<https://example.org/arpo#JWebSemantics> <https://example.org/arpo#hasImpactFactor> "3.2"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://example.org/arpo#JWebSemantics> <http://www.w3.org/2000/01/rdf-schema#label> "Journal of Web Semantics" .
+# 
+# https://example.org/arpo#KnowledgeEngineering
+<https://example.org/arpo#KnowledgeEngineering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#KnowledgeEngineering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#ResearchTopic> .
+<https://example.org/arpo#KnowledgeEngineering> <https://example.org/arpo#hasTopicName> "Knowledge Engineering" .
+# 
+# https://example.org/arpo#KnowledgeLabA
+<https://example.org/arpo#KnowledgeLabA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#KnowledgeLabA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#ResearchGroup> .
+<https://example.org/arpo#KnowledgeLabA> <http://www.w3.org/2000/01/rdf-schema#label> "Knowledge Engineering Lab, Example University A" .
+# 
+# https://example.org/arpo#MachineLearning
+<https://example.org/arpo#MachineLearning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#MachineLearning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#ResearchTopic> .
+<https://example.org/arpo#MachineLearning> <https://example.org/arpo#hasTopicName> "Machine Learning" .
+# 
+# https://example.org/arpo#SemanticWeb
+<https://example.org/arpo#SemanticWeb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#SemanticWeb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#ResearchTopic> .
+<https://example.org/arpo#SemanticWeb> <https://example.org/arpo#hasTopicName> "Semantic Web" .
+# 
+# https://example.org/arpo#UniExampleA
+<https://example.org/arpo#UniExampleA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#UniExampleA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#University> .
+<https://example.org/arpo#UniExampleA> <http://www.w3.org/2000/01/rdf-schema#label> "Example University A" .
+# 
+# https://example.org/arpo#UniExampleB
+<https://example.org/arpo#UniExampleB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#UniExampleB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#University> .
+<https://example.org/arpo#UniExampleB> <http://www.w3.org/2000/01/rdf-schema#label> "Example University B" .
+# 
+# https://example.org/arpo#affRec_alice_A
+<https://example.org/arpo#affRec_alice_A> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#affRec_alice_A> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#AffiliationRecord> .
+<https://example.org/arpo#affRec_alice_A> <https://example.org/arpo#affiliatedInstitution> <https://example.org/arpo#UniExampleA> .
+<https://example.org/arpo#affRec_alice_A> <https://example.org/arpo#hasStartYear> "2020"^^<http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://example.org/arpo#author_alice
+<https://example.org/arpo#author_alice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#author_alice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#Author> .
+<https://example.org/arpo#author_alice> <https://example.org/arpo#hasAffiliationRecord> <https://example.org/arpo#affRec_alice_A> .
+<https://example.org/arpo#author_alice> <https://example.org/arpo#hasCoAuthor> <https://example.org/arpo#author_bob> .
+<https://example.org/arpo#author_bob> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#author_alice> <https://example.org/arpo#isAffiliatedWith> <https://example.org/arpo#UniExampleA> .
+<https://example.org/arpo#author_alice> <https://example.org/arpo#memberOf> <https://example.org/arpo#KnowledgeLabA> .
+<https://example.org/arpo#author_alice> <https://example.org/arpo#hasName> "Alice Smith" .
+<https://example.org/arpo#author_alice> <https://example.org/arpo#hasORCID> "0000-0001-2345-6789" .
+# 
+# https://example.org/arpo#author_bob
+<https://example.org/arpo#author_bob> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#Author> .
+<https://example.org/arpo#author_bob> <https://example.org/arpo#isAffiliatedWith> <https://example.org/arpo#UniExampleB> .
+<https://example.org/arpo#author_bob> <https://example.org/arpo#hasName> "Bob Jones" .
+<https://example.org/arpo#author_bob> <https://example.org/arpo#hasORCID> "0000-0002-9876-5432" .
+# 
+# https://example.org/arpo#grant_arpo_2025
+<https://example.org/arpo#grant_arpo_2025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#grant_arpo_2025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#Grant> .
+<https://example.org/arpo#grant_arpo_2025> <https://example.org/arpo#fundedBy> <https://example.org/arpo#FunderNSF> .
+<https://example.org/arpo#grant_arpo_2025> <https://example.org/arpo#hasGrantNumber> "NSF-2025-KE-001" .
+# 
+# https://example.org/arpo#kw_linkeddata
+<https://example.org/arpo#kw_linkeddata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#kw_linkeddata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#Keyword> .
+<https://example.org/arpo#kw_linkeddata> <https://example.org/arpo#representsArea> <https://example.org/arpo#SemanticWeb> .
+<https://example.org/arpo#kw_linkeddata> <https://example.org/arpo#hasLabel> "Linked Data" .
+# 
+# https://example.org/arpo#kw_llm
+<https://example.org/arpo#kw_llm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#kw_llm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#Keyword> .
+<https://example.org/arpo#kw_llm> <https://example.org/arpo#representsArea> <https://example.org/arpo#MachineLearning> .
+<https://example.org/arpo#kw_llm> <https://example.org/arpo#hasLabel> "Large Language Model" .
+# 
+# https://example.org/arpo#kw_ontology
+<https://example.org/arpo#kw_ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#kw_ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#Keyword> .
+<https://example.org/arpo#kw_ontology> <https://example.org/arpo#representsArea> <https://example.org/arpo#KnowledgeEngineering> .
+<https://example.org/arpo#kw_ontology> <https://example.org/arpo#hasLabel> "ontology" .
+# 
+# https://example.org/arpo#kw_owl
+<https://example.org/arpo#kw_owl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#kw_owl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#Keyword> .
+<https://example.org/arpo#kw_owl> <https://example.org/arpo#representsArea> <https://example.org/arpo#SemanticWeb> .
+<https://example.org/arpo#kw_owl> <https://example.org/arpo#hasLabel> "OWL" .
+# 
+# https://example.org/arpo#paper_001
+<https://example.org/arpo#paper_001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#paper_001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#JournalArticle> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#cites> <https://example.org/arpo#paper_002> .
+<https://example.org/arpo#paper_002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasAuthor> <https://example.org/arpo#author_alice> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasAuthor> <https://example.org/arpo#author_bob> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasFunding> <https://example.org/arpo#grant_arpo_2025> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasKeyword> <https://example.org/arpo#kw_linkeddata> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasKeyword> <https://example.org/arpo#kw_ontology> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasKeyword> <https://example.org/arpo#kw_owl> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasOpenAccessStatus> <https://example.org/arpo#GoldOA> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasResearchTopic> <https://example.org/arpo#KnowledgeEngineering> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasResearchTopic> <https://example.org/arpo#SemanticWeb> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#publishedIn> <https://example.org/arpo#JWebSemantics> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasAbstract> "We present ARPO, a formal OWL 2 DL ontology for representing the academic research publication domain, supporting semantic search and citation analysis." .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasCitationCount> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasDOI> "10.1000/arpo.2025.001" .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasIssue> "3" .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasPageEnd> "118"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasPageStart> "101"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasTitle> "An Ontology for Academic Research Publications" .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasVolume> "12" .
+<https://example.org/arpo#paper_001> <https://example.org/arpo#hasYear> "2025"^^<http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://example.org/arpo#paper_002
+<https://example.org/arpo#paper_002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#ConferencePaper> .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#hasAuthor> <https://example.org/arpo#author_alice> .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#hasKeyword> <https://example.org/arpo#kw_ontology> .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#hasOpenAccessStatus> <https://example.org/arpo#GreenOA> .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#hasResearchTopic> <https://example.org/arpo#KnowledgeEngineering> .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#publishedIn> <https://example.org/arpo#ISWC2025> .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#hasCitationCount> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#hasDOI> "10.1000/arpo.2025.002" .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#hasPageEnd> "57"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#hasPageStart> "44"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#hasTitle> "Competency Questions in Ontology Engineering: A Systematic Review" .
+<https://example.org/arpo#paper_002> <https://example.org/arpo#hasYear> "2025"^^<http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# https://example.org/arpo#preprint_001
+<https://example.org/arpo#preprint_001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/arpo#preprint_001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/arpo#Preprint> .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#cites> <https://example.org/arpo#paper_001> .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#hasAuthor> <https://example.org/arpo#author_alice> .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#hasAuthor> <https://example.org/arpo#author_bob> .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#hasKeyword> <https://example.org/arpo#kw_llm> .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#hasKeyword> <https://example.org/arpo#kw_ontology> .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#hasOpenAccessStatus> <https://example.org/arpo#GoldOA> .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#hasResearchTopic> <https://example.org/arpo#KnowledgeEngineering> .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#hasResearchTopic> <https://example.org/arpo#MachineLearning> .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#hasDOI> "10.48550/arXiv.2026.00001" .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#hasTitle> "LLM-Based Population of the ARPO Knowledge Graph: A Pilot Study" .
+<https://example.org/arpo#preprint_001> <https://example.org/arpo#hasYear> "2026"^^<http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid1 <http://www.w3.org/2002/07/owl#members> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#Thesis> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#TechnicalReport> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#Preprint> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#JournalArticle> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#ConferencePaper> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#BookChapter> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid8 <http://www.w3.org/2002/07/owl#members> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#University> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#ResearchInstitute> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#ResearchGroup> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#Company> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid13 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#GreenOA> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#GoldOA> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#ClosedAccess> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://example.org/arpo#BronzeOA> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

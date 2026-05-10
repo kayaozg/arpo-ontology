@@ -1,0 +1,1838 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "https://example.org/arpo", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "undefined" : "Academic Research Publication Ontology (ARPO)"
+    },
+    "iri" : "https://example.org/arpo",
+    "author" : [ "Fırat Kaya Özgenç" ],
+    "description" : {
+      "undefined" : "A formal OWL 2 DL ontology for representing academic research publications, authors, venues, institutions, citation relationships, funding, and open access status."
+    },
+    "other" : {
+      "date" : [ {
+        "identifier" : "date",
+        "language" : "undefined",
+        "value" : "2026-05-05",
+        "type" : "label"
+      } ],
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "priorVersion" : [ {
+        "identifier" : "priorVersion",
+        "language" : "undefined",
+        "value" : "https://example.org/arpo/1.0",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Fırat Kaya Özgenç",
+        "type" : "label"
+      } ],
+      "changeNote" : [ {
+        "identifier" : "changeNote",
+        "language" : "undefined",
+        "value" : "v2.0: Added ResearchGroup, Grant, FundingBody, AffiliationRecord, OpenAccessStatus, PeerReviewRecord, Preprint classes. Added 6 new object properties and 4 new data properties. Modelling follows MOMo methodology with record and controlled-vocabulary patterns.",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "Academic Research Publication Ontology (ARPO)",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "21",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "25",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "59",
+    "type" : "owl:Class"
+  }, {
+    "id" : "60",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "86",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "84",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "74",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:Class"
+  }, {
+    "id" : "96",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "79",
+    "type" : "owl:Class"
+  }, {
+    "id" : "54",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://example.org/arpo#ResearchTopic",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ResearchTopic",
+      "undefined" : "Research Topic"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#SemanticWeb",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "SemanticWeb"
+      }
+    }, {
+      "iri" : "https://example.org/arpo#KnowledgeEngineering",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "KnowledgeEngineering"
+      }
+    }, {
+      "iri" : "https://example.org/arpo#MachineLearning",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "MachineLearning"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A subject area or thematic domain of academic research."
+    },
+    "id" : "0"
+  }, {
+    "iri" : "https://example.org/arpo#ResearchInstitute",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ResearchInstitute",
+      "undefined" : "Research Institute"
+    },
+    "comment" : {
+      "undefined" : "A dedicated research organisation, not necessarily degree-granting."
+    },
+    "id" : "1",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "3",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://example.org/arpo#Publication",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Publication",
+      "undefined" : "Publication"
+    },
+    "subClasses" : [ "5", "6", "7", "8", "9", "10" ],
+    "comment" : {
+      "undefined" : "The top-level class for all types of academic research outputs."
+    },
+    "id" : "4"
+  }, {
+    "iri" : "https://example.org/arpo#ResearchGroup",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ResearchGroup",
+      "undefined" : "Research Group"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#KnowledgeLabA",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "KnowledgeLabA",
+        "undefined" : "Knowledge Engineering Lab, Example University A"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A named research group or laboratory operating within a university or research institute."
+    },
+    "id" : "11",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://example.org/arpo#JournalArticle",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "JournalArticle",
+      "undefined" : "Journal Article"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#paper_001",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "paper_001"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A peer-reviewed article published in a scholarly journal."
+    },
+    "id" : "9",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://example.org/arpo#Grant",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Grant",
+      "undefined" : "Grant"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#grant_arpo_2025",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "grant_arpo_2025"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A funded research grant associated with one or more publications."
+    },
+    "id" : "12"
+  }, {
+    "iri" : "https://example.org/arpo#PeerReviewRecord",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PeerReviewRecord",
+      "undefined" : "Peer Review Record"
+    },
+    "comment" : {
+      "undefined" : "A record capturing the peer-review status of a publication, including whether it was reviewed and at which venue. Follows the MOMo provenance pattern."
+    },
+    "id" : "19"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "20",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "21",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "22",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "23",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "24",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "25",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "18",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "31",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://example.org/arpo#PublicationVenue",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PublicationVenue",
+      "undefined" : "Publication Venue"
+    },
+    "subClasses" : [ "28", "27" ],
+    "comment" : {
+      "undefined" : "A channel or forum where academic research is formally published or presented."
+    },
+    "id" : "32"
+  }, {
+    "iri" : "https://example.org/arpo#Thesis",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Thesis",
+      "undefined" : "Thesis"
+    },
+    "comment" : {
+      "undefined" : "A doctoral dissertation or master's thesis submitted to an academic institution."
+    },
+    "id" : "10",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://example.org/arpo#Institution",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Institution",
+      "undefined" : "Institution"
+    },
+    "subClasses" : [ "1", "30", "11", "41" ],
+    "comment" : {
+      "undefined" : "An organisation with which researchers may be affiliated."
+    },
+    "id" : "2"
+  }, {
+    "iri" : "https://example.org/arpo#BookChapter",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BookChapter",
+      "undefined" : "Book Chapter"
+    },
+    "comment" : {
+      "undefined" : "A chapter or section published within an edited academic book."
+    },
+    "id" : "5",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://example.org/arpo#Citation",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Citation",
+      "undefined" : "Citation"
+    },
+    "comment" : {
+      "undefined" : "A formal reference from one publication to another."
+    },
+    "id" : "58"
+  }, {
+    "iri" : "https://example.org/arpo#Researcher",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Researcher",
+      "undefined" : "Researcher"
+    },
+    "subClasses" : [ "34", "61" ],
+    "comment" : {
+      "undefined" : "A person who conducts academic research."
+    },
+    "id" : "59",
+    "superClasses" : [ "60" ]
+  }, {
+    "iri" : "https://example.org/arpo#Person",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person",
+      "undefined" : "Person"
+    },
+    "subClasses" : [ "59" ],
+    "comment" : {
+      "undefined" : "A human being involved in academic research activities."
+    },
+    "id" : "60"
+  }, {
+    "iri" : "https://example.org/arpo#University",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "University",
+      "undefined" : "University"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#UniExampleB",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "UniExampleB",
+        "undefined" : "Example University B"
+      }
+    }, {
+      "iri" : "https://example.org/arpo#UniExampleA",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "UniExampleA",
+        "undefined" : "Example University A"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A higher-education institution that conducts research."
+    },
+    "id" : "30",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "80",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "86",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "15",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "84",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "87",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "37",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "74",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "55",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "71",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "82",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://example.org/arpo#Preprint",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Preprint",
+      "undefined" : "Preprint"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#preprint_001",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "preprint_001"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A version of a research paper made publicly available before formal peer review, typically deposited on a preprint server such as arXiv or bioRxiv."
+    },
+    "id" : "8",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://example.org/arpo#OpenAccessStatus",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OpenAccessStatus",
+      "undefined" : "Open Access Status"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#BronzeOA",
+      "baseIri" : "https://example.org/arpo",
+      "comment" : {
+        "undefined" : "Free to read on the publisher site but without an open licence."
+      },
+      "labels" : {
+        "IRI-based" : "BronzeOA",
+        "undefined" : "Bronze Open Access"
+      }
+    }, {
+      "iri" : "https://example.org/arpo#GoldOA",
+      "baseIri" : "https://example.org/arpo",
+      "comment" : {
+        "undefined" : "Immediately freely available via the publisher under an open licence."
+      },
+      "labels" : {
+        "IRI-based" : "GoldOA",
+        "undefined" : "Gold Open Access"
+      }
+    }, {
+      "iri" : "https://example.org/arpo#GreenOA",
+      "baseIri" : "https://example.org/arpo",
+      "comment" : {
+        "undefined" : "Self-archived in a repository (preprint or accepted manuscript)."
+      },
+      "labels" : {
+        "IRI-based" : "GreenOA",
+        "undefined" : "Green Open Access"
+      }
+    }, {
+      "iri" : "https://example.org/arpo#ClosedAccess",
+      "baseIri" : "https://example.org/arpo",
+      "comment" : {
+        "undefined" : "Access is restricted; requires subscription or payment."
+      },
+      "labels" : {
+        "IRI-based" : "ClosedAccess",
+        "undefined" : "Closed Access"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "The open access category of a publication. Controlled vocabulary: gold, green, bronze, closed. Follows the MOMo controlled-vocabulary (purple-box) pattern."
+    },
+    "id" : "17"
+  }, {
+    "iri" : "https://example.org/arpo#ConferencePaper",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConferencePaper",
+      "undefined" : "Conference Paper"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#paper_002",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "paper_002"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A paper accepted and presented at an academic conference or workshop."
+    },
+    "id" : "7",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://example.org/arpo#AffiliationRecord",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AffiliationRecord",
+      "undefined" : "Affiliation Record"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#affRec_alice_A",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "affRec_alice_A"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A time-bounded record linking an Author to an Institution for a given period. Follows the MOMo record pattern, which reifies relationships that change over time."
+    },
+    "id" : "14"
+  }, {
+    "iri" : "https://example.org/arpo#Company",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Company",
+      "undefined" : "Company"
+    },
+    "comment" : {
+      "undefined" : "An industrial or commercial organisation engaged in research."
+    },
+    "id" : "41",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://example.org/arpo#TechnicalReport",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TechnicalReport",
+      "undefined" : "Technical Report"
+    },
+    "comment" : {
+      "undefined" : "A formal report describing the results or progress of technical research."
+    },
+    "id" : "6",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://example.org/arpo#Journal",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Journal",
+      "undefined" : "Journal"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#JWebSemantics",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "JWebSemantics",
+        "undefined" : "Journal of Web Semantics"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A periodical publication containing peer-reviewed academic articles."
+    },
+    "id" : "28",
+    "superClasses" : [ "32" ]
+  }, {
+    "iri" : "https://example.org/arpo#Workshop",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Workshop",
+      "undefined" : "Workshop"
+    },
+    "comment" : {
+      "undefined" : "A smaller, more focused academic event often co-located with a major conference."
+    },
+    "id" : "101",
+    "superClasses" : [ "27" ]
+  }, {
+    "iri" : "https://example.org/arpo#Publisher",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Publisher",
+      "undefined" : "Publisher"
+    },
+    "comment" : {
+      "undefined" : "An organisation responsible for producing and distributing publications."
+    },
+    "id" : "96"
+  }, {
+    "iri" : "https://example.org/arpo#Author",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Author",
+      "undefined" : "Author"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#author_bob",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "author_bob"
+      }
+    }, {
+      "iri" : "https://example.org/arpo#author_alice",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "author_alice"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A researcher who has authored one or more publications."
+    },
+    "id" : "34",
+    "superClasses" : [ "59" ]
+  }, {
+    "iri" : "https://example.org/arpo#FundingBody",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FundingBody",
+      "undefined" : "Funding Body"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#FunderNSF",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "FunderNSF",
+        "undefined" : "National Science Foundation (NSF)"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "An organisation that provides research funding, such as a national science foundation, charity, or government agency."
+    },
+    "id" : "79"
+  }, {
+    "iri" : "https://example.org/arpo#Keyword",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Keyword",
+      "undefined" : "Keyword"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#kw_llm",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "kw_llm"
+      }
+    }, {
+      "iri" : "https://example.org/arpo#kw_ontology",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "kw_ontology"
+      }
+    }, {
+      "iri" : "https://example.org/arpo#kw_owl",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "kw_owl"
+      }
+    }, {
+      "iri" : "https://example.org/arpo#kw_linkeddata",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "kw_linkeddata"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A term or phrase assigned to a publication to describe its content."
+    },
+    "id" : "54"
+  }, {
+    "iri" : "https://example.org/arpo#Conference",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Conference",
+      "undefined" : "Conference"
+    },
+    "individuals" : [ {
+      "iri" : "https://example.org/arpo#ISWC2025",
+      "baseIri" : "https://example.org/arpo",
+      "labels" : {
+        "IRI-based" : "ISWC2025",
+        "undefined" : "24th International Semantic Web Conference (ISWC 2025)"
+      }
+    } ],
+    "subClasses" : [ "101" ],
+    "comment" : {
+      "undefined" : "An academic event at which research papers are presented and published in proceedings."
+    },
+    "id" : "27",
+    "superClasses" : [ "32" ]
+  }, {
+    "iri" : "https://example.org/arpo#Reviewer",
+    "baseIri" : "https://example.org/arpo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Reviewer",
+      "undefined" : "Reviewer"
+    },
+    "comment" : {
+      "undefined" : "A researcher who peer-reviews academic manuscripts."
+    },
+    "id" : "61",
+    "superClasses" : [ "59" ]
+  } ],
+  "property" : [ {
+    "id" : "13",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "29",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "33",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "36",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "38",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "39",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "42",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "43",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "44",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "45",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "46",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "47",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "48",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "51",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "49",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "53",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "62",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "63",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "64",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "65",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "68",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "69",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "70",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "72",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "73",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "77",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "78",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "81",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "83",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "85",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "88",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "89",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "90",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "92",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "93",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "95",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "97",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "94",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "98",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "99",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "100",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "102",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "103",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "104",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "105",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "106",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "107",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "108",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "109",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "110",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "111",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "112",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "113",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "114",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "115",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "116",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "117",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "118",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "119",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "120",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "121",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "122",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "123",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://example.org/arpo#hasStartYear",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "hasStartYear",
+      "undefined" : "has start year"
+    },
+    "domain" : "14",
+    "comment" : {
+      "undefined" : "The year in which the affiliation described by this record began."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://example.org/arpo#hasAccessType",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "hasAccessType",
+      "undefined" : "has access type"
+    },
+    "domain" : "17",
+    "comment" : {
+      "undefined" : "The open access type label. Expected values: gold, green, bronze, closed."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "16"
+  }, {
+    "range" : "28",
+    "domain" : "27",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "26"
+  }, {
+    "range" : "30",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "29"
+  }, {
+    "iri" : "https://example.org/arpo#hasAffiliationRecord",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasAffiliationRecord",
+      "undefined" : "has affiliation record"
+    },
+    "domain" : "34",
+    "comment" : {
+      "undefined" : "Relates an author to a time-bounded affiliation record. Implements the MOMo record pattern to allow tracking of affiliation changes over time."
+    },
+    "attributes" : [ "object" ],
+    "id" : "33"
+  }, {
+    "iri" : "https://example.org/arpo#hasCoAuthor",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "hasCoAuthor",
+      "undefined" : "has co-author"
+    },
+    "domain" : "34",
+    "comment" : {
+      "undefined" : "Relates two authors who have co-authored at least one publication together."
+    },
+    "attributes" : [ "symmetric", "object" ],
+    "id" : "35"
+  }, {
+    "iri" : "https://example.org/arpo#hasTitle",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "37",
+    "label" : {
+      "IRI-based" : "hasTitle",
+      "undefined" : "has title"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "The full title of the publication."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "36"
+  }, {
+    "range" : "1",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "38"
+  }, {
+    "iri" : "https://example.org/arpo#hasISSN",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "hasISSN",
+      "undefined" : "has ISSN"
+    },
+    "domain" : "28",
+    "comment" : {
+      "undefined" : "The International Standard Serial Number of the journal."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "39"
+  }, {
+    "range" : "30",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "40"
+  }, {
+    "range" : "30",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "42"
+  }, {
+    "range" : "10",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "43"
+  }, {
+    "range" : "10",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "44"
+  }, {
+    "range" : "1",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "45"
+  }, {
+    "range" : "11",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "46"
+  }, {
+    "range" : "6",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "47"
+  }, {
+    "iri" : "https://example.org/arpo#isAuthorOf",
+    "inverse" : "49",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "isAuthorOf",
+      "undefined" : "is author of"
+    },
+    "domain" : "34",
+    "comment" : {
+      "undefined" : "Relates an author to a publication they have authored."
+    },
+    "attributes" : [ "object" ],
+    "id" : "48"
+  }, {
+    "range" : "6",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "50"
+  }, {
+    "range" : "10",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "51"
+  }, {
+    "iri" : "https://example.org/arpo#hasAuthor",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "hasAuthor",
+      "undefined" : "has author"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Relates a publication to one of its authors."
+    },
+    "attributes" : [ "object" ],
+    "id" : "49"
+  }, {
+    "range" : "2",
+    "domain" : "30",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "52"
+  }, {
+    "iri" : "https://example.org/arpo#hasLabel",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "55",
+    "label" : {
+      "IRI-based" : "hasLabel",
+      "undefined" : "has label"
+    },
+    "domain" : "54",
+    "comment" : {
+      "undefined" : "The textual label of the keyword."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "53"
+  }, {
+    "range" : "2",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "56"
+  }, {
+    "range" : "2",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "57"
+  }, {
+    "iri" : "https://example.org/arpo#hasGrantNumber",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "hasGrantNumber",
+      "undefined" : "has grant number"
+    },
+    "domain" : "12",
+    "comment" : {
+      "undefined" : "The official award or grant number assigned by the funding body."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "62"
+  }, {
+    "iri" : "https://example.org/arpo#isAffiliatedWith",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "isAffiliatedWith",
+      "undefined" : "is affiliated with"
+    },
+    "domain" : "59",
+    "comment" : {
+      "undefined" : "Direct affiliation link between a researcher and an institution (simplified role-chain shortcut, following Norouzi et al. 2025)."
+    },
+    "attributes" : [ "object" ],
+    "id" : "63"
+  }, {
+    "iri" : "https://example.org/arpo#hasFunding",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "hasFunding",
+      "undefined" : "has funding"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Relates a publication to a grant that funded the research."
+    },
+    "attributes" : [ "object" ],
+    "id" : "64"
+  }, {
+    "range" : "32",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "65"
+  }, {
+    "range" : "4",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "66"
+  }, {
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "67"
+  }, {
+    "range" : "32",
+    "domain" : "27",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "68"
+  }, {
+    "range" : "4",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "69"
+  }, {
+    "iri" : "https://example.org/arpo#hasPageEnd",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "71",
+    "label" : {
+      "IRI-based" : "hasPageEnd",
+      "undefined" : "has page end"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "The last page number of the publication."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "70"
+  }, {
+    "range" : "4",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "72"
+  }, {
+    "iri" : "https://example.org/arpo#hasName",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "74",
+    "label" : {
+      "IRI-based" : "hasName",
+      "undefined" : "has name"
+    },
+    "domain" : "60",
+    "comment" : {
+      "undefined" : "The full name of the person."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "73"
+  }, {
+    "range" : "4",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "75"
+  }, {
+    "range" : "4",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "76"
+  }, {
+    "range" : "4",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "77"
+  }, {
+    "iri" : "https://example.org/arpo#fundedBy",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "79",
+    "label" : {
+      "IRI-based" : "fundedBy",
+      "undefined" : "funded by"
+    },
+    "domain" : "12",
+    "comment" : {
+      "undefined" : "Relates a grant to the funding body that issued it."
+    },
+    "attributes" : [ "object" ],
+    "id" : "78"
+  }, {
+    "iri" : "https://example.org/arpo#hasORCID",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "82",
+    "label" : {
+      "IRI-based" : "hasORCID",
+      "undefined" : "has ORCID"
+    },
+    "domain" : "59",
+    "comment" : {
+      "undefined" : "The Open Researcher and Contributor ID (ORCID) of the researcher."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "81"
+  }, {
+    "iri" : "https://example.org/arpo#hasPageStart",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "84",
+    "label" : {
+      "IRI-based" : "hasPageStart",
+      "undefined" : "has page start"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "The first page number of the publication."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "83"
+  }, {
+    "iri" : "https://example.org/arpo#hasVolume",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "86",
+    "label" : {
+      "IRI-based" : "hasVolume",
+      "undefined" : "has volume"
+    },
+    "domain" : "9",
+    "comment" : {
+      "undefined" : "The journal volume in which the article appears."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "85"
+  }, {
+    "iri" : "https://example.org/arpo#hasOpenAccessStatus",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "hasOpenAccessStatus",
+      "undefined" : "has open access status"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Relates a publication to its open access category (gold, green, bronze, or closed)."
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "88"
+  }, {
+    "iri" : "https://example.org/arpo#hasEndYear",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "hasEndYear",
+      "undefined" : "has end year"
+    },
+    "domain" : "14",
+    "comment" : {
+      "undefined" : "The year in which the affiliation described by this record ended. Omitted if the affiliation is current."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "89"
+  }, {
+    "iri" : "https://example.org/arpo#hasYear",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "80",
+    "label" : {
+      "IRI-based" : "hasYear",
+      "undefined" : "has year"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "The year in which the publication was published."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "90"
+  }, {
+    "iri" : "https://example.org/arpo#hasKeyword",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "54",
+    "label" : {
+      "IRI-based" : "hasKeyword",
+      "undefined" : "has keyword"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Relates a publication to one of its descriptor keywords."
+    },
+    "attributes" : [ "object" ],
+    "id" : "91"
+  }, {
+    "iri" : "https://example.org/arpo#hasTopicName",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "87",
+    "label" : {
+      "IRI-based" : "hasTopicName",
+      "undefined" : "has topic name"
+    },
+    "domain" : "0",
+    "comment" : {
+      "undefined" : "The name of the research topic."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "92"
+  }, {
+    "iri" : "https://example.org/arpo#isCitedBy",
+    "inverse" : "94",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "isCitedBy",
+      "undefined" : "is cited by"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Relates a publication to publications that cite it."
+    },
+    "attributes" : [ "object" ],
+    "id" : "93"
+  }, {
+    "iri" : "https://example.org/arpo#publishedBy",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "96",
+    "label" : {
+      "IRI-based" : "publishedBy",
+      "undefined" : "published by"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Relates a publication to the publisher responsible for it."
+    },
+    "attributes" : [ "object" ],
+    "id" : "95"
+  }, {
+    "iri" : "https://example.org/arpo#publishedIn",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "publishedIn",
+      "undefined" : "published in"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Relates a publication to the venue in which it was published."
+    },
+    "attributes" : [ "object" ],
+    "id" : "97"
+  }, {
+    "iri" : "https://example.org/arpo#cites",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "cites",
+      "undefined" : "cites"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Relates a publication to another publication it cites."
+    },
+    "attributes" : [ "irreflexive", "object" ],
+    "id" : "94"
+  }, {
+    "range" : "59",
+    "domain" : "61",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "98"
+  }, {
+    "range" : "59",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "99"
+  }, {
+    "range" : "27",
+    "domain" : "101",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "100"
+  }, {
+    "iri" : "https://example.org/arpo#hasResearchTopic",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "hasResearchTopic",
+      "undefined" : "has research topic"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Relates a publication to a research topic it covers."
+    },
+    "attributes" : [ "object" ],
+    "id" : "102"
+  }, {
+    "range" : "60",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "103"
+  }, {
+    "iri" : "https://example.org/arpo#hasPeerReviewRecord",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "hasPeerReviewRecord",
+      "undefined" : "has peer review record"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Relates a publication to a record of its peer-review status."
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "104"
+  }, {
+    "range" : "8",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "105"
+  }, {
+    "range" : "6",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "106"
+  }, {
+    "range" : "10",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "107"
+  }, {
+    "range" : "9",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "108"
+  }, {
+    "range" : "8",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "109"
+  }, {
+    "range" : "6",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "110"
+  }, {
+    "range" : "10",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "111"
+  }, {
+    "range" : "8",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "112"
+  }, {
+    "iri" : "https://example.org/arpo#hasAffiliation",
+    "inverse" : "63",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "59",
+    "label" : {
+      "IRI-based" : "hasAffiliation",
+      "undefined" : "has affiliation"
+    },
+    "domain" : "2",
+    "comment" : {
+      "undefined" : "Relates an institution to a researcher affiliated with it."
+    },
+    "attributes" : [ "object" ],
+    "id" : "113"
+  }, {
+    "range" : "7",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "114"
+  }, {
+    "range" : "9",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "115"
+  }, {
+    "iri" : "https://example.org/arpo#hasDOI",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "hasDOI",
+      "undefined" : "has DOI"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "The Digital Object Identifier (DOI) of the publication."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "116"
+  }, {
+    "iri" : "https://example.org/arpo#hasIssue",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "hasIssue",
+      "undefined" : "has issue"
+    },
+    "domain" : "9",
+    "comment" : {
+      "undefined" : "The journal issue in which the article appears."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "117"
+  }, {
+    "iri" : "https://example.org/arpo#memberOf",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "memberOf",
+      "undefined" : "member of"
+    },
+    "domain" : "34",
+    "comment" : {
+      "undefined" : "Relates an author to a research group they belong to."
+    },
+    "attributes" : [ "object" ],
+    "id" : "118"
+  }, {
+    "iri" : "https://example.org/arpo#hasCitationCount",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "hasCitationCount",
+      "undefined" : "has citation count"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "The total number of times the publication has been cited."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "119"
+  }, {
+    "iri" : "https://example.org/arpo#hasAbstract",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "hasAbstract",
+      "undefined" : "has abstract"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "The abstract or summary text of the publication."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "120"
+  }, {
+    "iri" : "https://example.org/arpo#representsArea",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "representsArea",
+      "undefined" : "represents area"
+    },
+    "domain" : "54",
+    "comment" : {
+      "undefined" : "Relates a keyword to the broader research topic it represents."
+    },
+    "attributes" : [ "object" ],
+    "id" : "121"
+  }, {
+    "iri" : "https://example.org/arpo#affiliatedInstitution",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "affiliatedInstitution",
+      "undefined" : "affiliated institution"
+    },
+    "domain" : "14",
+    "comment" : {
+      "undefined" : "The institution named in an affiliation record."
+    },
+    "attributes" : [ "object" ],
+    "id" : "122"
+  }, {
+    "iri" : "https://example.org/arpo#hasImpactFactor",
+    "baseIri" : "https://example.org/arpo",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasImpactFactor",
+      "undefined" : "has impact factor"
+    },
+    "domain" : "28",
+    "comment" : {
+      "undefined" : "The current Journal Impact Factor (JIF) of the journal."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "123"
+  } ]
+}

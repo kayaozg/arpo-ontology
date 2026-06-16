@@ -1,0 +1,168 @@
+PREFIX arpo:  <https://example.org/arpo#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+
+# =============================================================================
+# ARPO SPARQL QUERIES — Academic Research Publication Ontology v2.0
+# Categorised: Basic Retrieval | Reasoning | Aggregation
+# =============================================================================
+
+
+# ── Q1 [BASIC] CQ1 — What papers has a given author published? ───────────────
+# Lists all publications authored by Alice Smith with title and year.
+
+SELECT ?paper ?title ?year WHERE {
+    ?author a arpo:Author ;
+            arpo:hasName "Alice Smith" .
+    ?paper  arpo:hasAuthor ?author ;
+            arpo:hasTitle  ?title ;
+            arpo:hasYear   ?year .
+}
+ORDER BY DESC(?year)
+
+
+# ── Q2 [BASIC] CQ3 — In which venue was each paper published? ────────────────
+# Returns each publication with its venue label and venue type.
+
+SELECT ?title ?venueName ?venueType WHERE {
+    ?paper arpo:hasTitle  ?title ;
+           arpo:publishedIn ?venue .
+    ?venue rdfs:label ?venueName .
+    ?venue a ?venueType .
+    FILTER(?venueType IN (arpo:Journal, arpo:Conference, arpo:Workshop))
+}
+ORDER BY ?venueName
+
+
+# ── Q3 [BASIC] CQ4 — What research topics does each paper cover? ──────────────
+# Returns papers with all their associated research topic names.
+
+SELECT ?title ?topicName WHERE {
+    ?paper arpo:hasTitle        ?title ;
+           arpo:hasResearchTopic ?topic .
+    ?topic arpo:hasTopicName    ?topicName .
+}
+ORDER BY ?title
+
+
+# ── Q4 [BASIC] CQ5 — Which authors are affiliated with a given institution? ───
+# Lists all authors affiliated with Example University A.
+
+SELECT ?authorName ?institution WHERE {
+    ?author a arpo:Author ;
+            arpo:hasName ?authorName ;
+            arpo:isAffiliatedWith ?inst .
+    ?inst rdfs:label ?institution .
+    FILTER(CONTAINS(?institution, "Example University A"))
+}
+
+
+# ── Q5 [BASIC] CQ6 — Papers published within a date range ────────────────────
+# Retrieves all papers published between 2020 and 2026 inclusive.
+
+SELECT ?title ?year ?type WHERE {
+    ?paper arpo:hasTitle ?title ;
+           arpo:hasYear  ?year ;
+           a ?type .
+    FILTER(?year >= 2020 && ?year <= 2026)
+    FILTER(?type IN (arpo:JournalArticle, arpo:ConferencePaper,
+                     arpo:BookChapter, arpo:Thesis,
+                     arpo:TechnicalReport, arpo:Preprint))
+}
+ORDER BY ?year
+
+
+# ── Q6 [BASIC] CQ13 — Open access publications (gold or green) ────────────────
+# Returns all publications that are gold or green open access.
+
+SELECT ?title ?accessType WHERE {
+    ?paper arpo:hasTitle            ?title ;
+           arpo:hasOpenAccessStatus ?status .
+    ?status arpo:hasAccessType ?accessType .
+    FILTER(?accessType IN ("gold", "green"))
+}
+
+
+# ── Q7 [REASONING] CQ2 — Which papers cite a given publication? ────────────────
+# Uses the isCitedBy inverse property to find papers citing paper_001.
+# The reasoner infers isCitedBy from the asserted cites triples.
+
+SELECT ?citingTitle ?citingYear WHERE {
+    arpo:paper_001 arpo:isCitedBy ?citing .
+    ?citing arpo:hasTitle ?citingTitle ;
+            arpo:hasYear  ?citingYear .
+}
+
+
+# ── Q8 [REASONING] — All instances of Publication including subclasses ─────────
+# Uses rdfs:subClassOf reasoning to retrieve all publication individuals
+# regardless of their specific subclass type.
+
+SELECT ?paper ?type ?title WHERE {
+    ?paper a ?type ;
+           arpo:hasTitle ?title .
+    ?type rdfs:subClassOf* arpo:Publication .
+    FILTER(?type != owl:NamedIndividual)
+}
+ORDER BY ?type
+
+
+# ── Q9 [AGGREGATION] CQ8 — Citation count per paper ──────────────────────────
+# Counts how many distinct papers cite each publication.
+
+SELECT ?title (COUNT(?citing) AS ?incomingCitations) WHERE {
+    ?paper arpo:hasTitle ?title .
+    OPTIONAL { ?citing arpo:cites ?paper . }
+}
+GROUP BY ?title
+ORDER BY DESC(?incomingCitations)
+
+
+# ── Q10 [AGGREGATION] CQ11 — Number of papers per research topic ──────────────
+# Groups publications by topic and counts how many papers each topic has.
+
+SELECT ?topicName (COUNT(DISTINCT ?paper) AS ?paperCount) WHERE {
+    ?paper arpo:hasResearchTopic ?topic .
+    ?topic arpo:hasTopicName     ?topicName .
+}
+GROUP BY ?topicName
+ORDER BY DESC(?paperCount)
+
+
+# ── Q11 [AGGREGATION] CQ9 — Co-author network ────────────────────────────────
+# Lists each author with the number of distinct co-authors they have.
+
+SELECT ?authorName (COUNT(DISTINCT ?coAuthor) AS ?coAuthorCount) WHERE {
+    ?author a arpo:Author ;
+            arpo:hasName    ?authorName ;
+            arpo:hasCoAuthor ?coAuthor .
+}
+GROUP BY ?authorName
+ORDER BY DESC(?coAuthorCount)
+
+
+# ── Q12 [AGGREGATION] CQ14 — Grants that funded a given paper ─────────────────
+# Returns the grant number and funder name for all grants linked to paper_001.
+
+SELECT ?grantNumber ?funderName WHERE {
+    arpo:paper_001 arpo:hasFunding ?grant .
+    ?grant arpo:hasGrantNumber ?grantNumber ;
+           arpo:fundedBy       ?fundingBody .
+    ?fundingBody rdfs:label ?funderName .
+}
+
+
+# ── Q13 [BASIC] CQ15 — Affiliation history of a given author ──────────────────
+# Returns the institution and time period from each affiliation record for Alice.
+
+SELECT ?institutionName ?startYear ?endYear WHERE {
+    ?author arpo:hasName "Alice Smith" ;
+            arpo:hasAffiliationRecord ?record .
+    ?record arpo:affiliatedInstitution ?inst ;
+            arpo:hasStartYear ?startYear .
+    ?inst rdfs:label ?institutionName .
+    OPTIONAL { ?record arpo:hasEndYear ?endYear . }
+}
+ORDER BY ?startYear

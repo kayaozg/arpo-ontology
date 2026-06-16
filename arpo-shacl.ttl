@@ -1,0 +1,263 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix arpo:  <https://example.org/arpo#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ARPO SHACL Validation Shapes
+# Academic Research Publication Ontology — v2.0
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+# ── 1. Publication Shape ──────────────────────────────────────────────────────
+# Every Publication MUST have a title, a year, and at least one author.
+# The year must be a 4-digit integer between 1600 and 2100.
+# DOI, when present, must be a non-empty string.
+
+arpo:PublicationShape
+    a sh:NodeShape ;
+    sh:targetClass arpo:Publication ;
+    rdfs:label "Publication Shape" ;
+    rdfs:comment "Validates that every Publication has required metadata." ;
+
+    sh:property [
+        sh:path      arpo:hasTitle ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:datatype  xsd:string ;
+        sh:minLength 1 ;
+        sh:message   "A Publication must have exactly one non-empty title." ;
+    ] ;
+
+    sh:property [
+        sh:path      arpo:hasYear ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:datatype  xsd:integer ;
+        sh:minInclusive 1600 ;
+        sh:maxInclusive 2100 ;
+        sh:message   "A Publication must have exactly one year between 1600 and 2100." ;
+    ] ;
+
+    sh:property [
+        sh:path     arpo:hasAuthor ;
+        sh:minCount 1 ;
+        sh:class    arpo:Author ;
+        sh:message  "A Publication must have at least one Author." ;
+    ] ;
+
+    sh:property [
+        sh:path      arpo:hasDOI ;
+        sh:maxCount  1 ;
+        sh:datatype  xsd:string ;
+        sh:minLength 5 ;
+        sh:message   "If a DOI is provided it must be a non-trivial string." ;
+    ] ;
+
+    sh:property [
+        sh:path    arpo:hasCitationCount ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:message "Citation count, if present, must be a non-negative integer." ;
+    ] .
+
+
+# ── 2. Journal Article Shape ─────────────────────────────────────────────────
+# A JournalArticle must be published in a Journal venue.
+
+arpo:JournalArticleShape
+    a sh:NodeShape ;
+    sh:targetClass arpo:JournalArticle ;
+    rdfs:label "Journal Article Shape" ;
+
+    sh:property [
+        sh:path    arpo:publishedIn ;
+        sh:minCount 1 ;
+        sh:class   arpo:Journal ;
+        sh:message "A JournalArticle must be published in a Journal." ;
+    ] .
+
+
+# ── 3. Conference Paper Shape ─────────────────────────────────────────────────
+# A ConferencePaper must be published in a Conference or Workshop venue.
+
+arpo:ConferencePaperShape
+    a sh:NodeShape ;
+    sh:targetClass arpo:ConferencePaper ;
+    rdfs:label "Conference Paper Shape" ;
+
+    sh:property [
+        sh:path     arpo:publishedIn ;
+        sh:minCount 1 ;
+        sh:or (
+            [ sh:class arpo:Conference ]
+            [ sh:class arpo:Workshop   ]
+        ) ;
+        sh:message "A ConferencePaper must be published in a Conference or Workshop." ;
+    ] .
+
+
+# ── 4. Author Shape ───────────────────────────────────────────────────────────
+# Every Author must have a name. ORCID, when present, must match the pattern.
+
+arpo:AuthorShape
+    a sh:NodeShape ;
+    sh:targetClass arpo:Author ;
+    rdfs:label "Author Shape" ;
+
+    sh:property [
+        sh:path      arpo:hasName ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:datatype  xsd:string ;
+        sh:minLength 2 ;
+        sh:message   "An Author must have exactly one name of at least 2 characters." ;
+    ] ;
+
+    sh:property [
+        sh:path    arpo:hasORCID ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:pattern  "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[0-9X]$" ;
+        sh:message  "ORCID must follow the format 0000-0000-0000-000X." ;
+    ] .
+
+
+# ── 5. Journal Shape ──────────────────────────────────────────────────────────
+# A Journal must have an ISSN. Impact factor, if given, must be positive.
+
+arpo:JournalShape
+    a sh:NodeShape ;
+    sh:targetClass arpo:Journal ;
+    rdfs:label "Journal Shape" ;
+
+    sh:property [
+        sh:path      arpo:hasISSN ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:datatype  xsd:string ;
+        sh:pattern   "^\\d{4}-\\d{3}[\\dX]$" ;
+        sh:message   "A Journal must have an ISSN matching the format XXXX-XXXX." ;
+    ] ;
+
+    sh:property [
+        sh:path     arpo:hasImpactFactor ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive "0.0"^^xsd:decimal ;
+        sh:message  "Impact factor, if provided, must be a non-negative decimal." ;
+    ] .
+
+
+# ── 6. Institution Shape ──────────────────────────────────────────────────────
+# An Institution must have an rdfs:label.
+
+arpo:InstitutionShape
+    a sh:NodeShape ;
+    sh:targetClass arpo:Institution ;
+    rdfs:label "Institution Shape" ;
+
+    sh:property [
+        sh:path     rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "An Institution must have at least one rdfs:label." ;
+    ] .
+
+
+# ── 7. AffiliationRecord Shape ────────────────────────────────────────────────
+# An AffiliationRecord must link to an institution and have a start year.
+
+arpo:AffiliationRecordShape
+    a sh:NodeShape ;
+    sh:targetClass arpo:AffiliationRecord ;
+    rdfs:label "Affiliation Record Shape" ;
+
+    sh:property [
+        sh:path     arpo:affiliatedInstitution ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class    arpo:Institution ;
+        sh:message  "An AffiliationRecord must reference exactly one Institution." ;
+    ] ;
+
+    sh:property [
+        sh:path     arpo:hasStartYear ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1800 ;
+        sh:message  "An AffiliationRecord must have a start year of 1800 or later." ;
+    ] ;
+
+    sh:property [
+        sh:path     arpo:hasEndYear ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1800 ;
+        sh:message  "End year, if given, must be 1800 or later." ;
+    ] .
+
+
+# ── 8. Grant Shape ────────────────────────────────────────────────────────────
+# A Grant must reference a FundingBody and have a grant number.
+
+arpo:GrantShape
+    a sh:NodeShape ;
+    sh:targetClass arpo:Grant ;
+    rdfs:label "Grant Shape" ;
+
+    sh:property [
+        sh:path     arpo:fundedBy ;
+        sh:minCount 1 ;
+        sh:class    arpo:FundingBody ;
+        sh:message  "A Grant must be funded by at least one FundingBody." ;
+    ] ;
+
+    sh:property [
+        sh:path      arpo:hasGrantNumber ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:datatype  xsd:string ;
+        sh:minLength 3 ;
+        sh:message   "A Grant must have a grant number of at least 3 characters." ;
+    ] .
+
+
+# ── 9. Open Access Status Shape ───────────────────────────────────────────────
+# OpenAccessStatus must have an access type from the controlled vocabulary.
+
+arpo:OpenAccessStatusShape
+    a sh:NodeShape ;
+    sh:targetClass arpo:OpenAccessStatus ;
+    rdfs:label "Open Access Status Shape" ;
+
+    sh:property [
+        sh:path      arpo:hasAccessType ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:datatype  xsd:string ;
+        sh:in        ( "gold" "green" "bronze" "closed" ) ;
+        sh:message   "Access type must be one of: gold, green, bronze, closed." ;
+    ] .
+
+
+# ── 10. Keyword Shape ─────────────────────────────────────────────────────────
+# A Keyword must have a label.
+
+arpo:KeywordShape
+    a sh:NodeShape ;
+    sh:targetClass arpo:Keyword ;
+    rdfs:label "Keyword Shape" ;
+
+    sh:property [
+        sh:path      arpo:hasLabel ;
+        sh:minCount  1 ;
+        sh:maxCount  1 ;
+        sh:datatype  xsd:string ;
+        sh:minLength 1 ;
+        sh:message   "A Keyword must have exactly one non-empty label." ;
+    ] .
